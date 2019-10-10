@@ -1,0 +1,5 @@
+User Story 1 (Lynda Johnson): As someone looking to set up a kickstarter, I want to see what metrics affect likelihood of success, in order to set up a successful kickstarter
+Requirements:
+1) Be able to view possible relationships between variables
+2) Be able to sort data by specific ranges of a given variable
+3) Data should be formatted so that it can be more easily interpreted
