@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Kickstarter Tool: Comparison page</title>
+    <link rel="stylesheet" href = "datastyle.css" />
+</head>
+<body>
+  
+  
+  
+	<article>
+  <div class="row">
+  <div class="col-12">
+    <h1>Kickstarter Comparison Tool</h1>
+  <div class="topnav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a class="active" href="#comparison">Comparison</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search..." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+    
+    <div class="row">
+      <div class="col-12 tools"><h2>Data Comparison</h2>
+      </div>
+    </div>
+    
+	<div class="row">
+  	<div class="col-3 menu">
+    	<h3>Tool Menu</h3>
+    	<ul>
+      	<li class="active">Plot Tool</li>
+      	<li>Chart Tool</li>
+      	<li>Table Tool</li>
+      	<li>Something</li>
+    	</ul>
+ 		</div>
+    
+    <div class="col-9">
+    	<p>The plot tool generates plots of user selected data. Select the data types you would like to compare as well as the range of time over which you would like to conduct the comparison. Additionaly, you may chose to further filter the data based on whether it at any point was a staff pick or received spotlight.</p>
+  	</div>
+    
+    <div class="row">
+      
+    	<div class="col-3">
+    		<div class="select_box">
+  				<select>
+    				<option value="0">Data Value 1:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+  				</select>
+        </div>
+        <div class="select_box">
+  				<select>
+    				<option value="0">Start Date:</option>
+            <option value="1">August 1st:</option>
+  				</select>
+				
+				</div>
+      </div>
+      
+      <div class="col-3">
+        <div class="select_box">
+  				<select>
+    				<option value="0">Data Value 2:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+  				</select>
+				</div>
+        <div class="select_box">
+  				<select>
+    				<option value="0">End Date:</option>
+            <option value="1">August 15th:</option>
+  				</select>
+				</div>
+      </div>
+      
+      <div class="col-3">
+				<label class="container">Staff pick
+  				<input type="checkbox">
+  				<span class="checkmark"></span>
+				</label>
+        <label class="container">Spotlight
+  				<input type="checkbox">
+  				<span class="checkmark"></span>
+				</label>
+      </div>
+      
+      <div class="row">
+      	<div class="col-12">
+          <h4>Kickstarter Backer Count vs. Pledged Amount ($USD) between August 1st and August 15th:</h4>
+          <img src="https://static.guim.co.uk/sys-images/Technology/Pix/pictures/2013/8/2/1375465053752/kickstart_data.png" class="centerImage">
+      	</div>
+    	</div>
+      
+  	</div>
+    
+  </div>
+    
+  
+
+		<section id="main_content">
+
+			<p></p>
+		</section>
+	</article>
+</body>
+  
+
+</html>
