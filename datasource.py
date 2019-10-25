@@ -21,7 +21,7 @@ class DataSource:
 	def __init__(self):
 		self.connection = null
 
-	def connect(user, password):
+	def connect(self, user, password):
 		'''
 		Establishes a connection to the database with the following credentials:
 			user - username, which is also the name of the database
@@ -74,7 +74,16 @@ class DataSource:
         RETURN:
 			a list of all of the kickstarter projects that were created using the specified currency
 		'''
-		return []
+
+		try:
+			cursor = connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE currency = " +str(currency)
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 
 	def getKickstartersInCategory(self, category):
@@ -219,7 +228,7 @@ class DataSource:
 		return []
 
 
-	def getBackersVsPledged(self):
+	def getBackersAndPledged(self):
 		'''
 		Returns a list with only the number of backers and pledged amount
 
@@ -230,10 +239,18 @@ class DataSource:
 		RETURN:
 			a list with only the number of backers and pledged amount
 		'''
-		return []
+		try:
+			cursor = connection.cursor()
+			query = "SELECT	backers_count, pledged FROM kickstarter"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 
-	def getUniqueCurrencies():
+	def getUniqueCurrencies(self):
 		'''
 		Returns a list with only the strings representing unique currencies
 
@@ -244,7 +261,74 @@ class DataSource:
 		RETURN:
 			a list with only the strings representing unique currencies
 		'''
-		return []
+		try:
+			cursor = connection.cursor()
+			query = "SELECT	DISTINCT currency FROM kickstarter"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def convertCurency(self, amount, cur_currency):
+		'''
+		Returns a double that represents "amount" converted to USD
+
+		PAREMETERS:
+		amount - amount of money
+		cur_currency - the current currency being used
+
+		RETURN:
+		a double that represents "amount" converted to USD, or -1 if incorrect currency
+		'''
+		aud = 0.68
+		cad = .77
+		chf = 1.01
+		dkk = 0.15
+		eur = 1.11
+		gbp = 1.28
+		hkd = 0.13
+		jpy = 0.0092
+		mxn = 0.052
+		nok = 0.11
+		nzd = 0.63
+		sek = 0.10
+		sgd = 0.73
+		usd = 1
+		if cur_currency == "USD":
+			return amount
+		else if cur_currency == "EUR":
+			return amount*eur
+		else if cur_currency == "CAD":
+			return amount*cad
+		else if cur_currency == "AUD":
+			return amount*aud
+		else if cur_currency == "CHF":
+			return amount*chf
+		else if cur_currency == "DKK":
+			return amount*dkk
+		else if cur_currency == "GBP":
+			return amount*gbp
+		else if cur_currency == "HKD":
+			return amount*hkd
+		else if cur_currency == "JPY":
+			return amount*jpy
+		else if cur_currency == "MXN":
+			return amount*mxn
+		else if cur_currency == "NOK":
+			return amount*nok
+		else if cur_currency == "NZD":
+			return amount*nzd
+		else if cur_currency == "SEK":
+			return amount*sek
+		else if cur_currency == "SGD":
+			return amount*sgd
+		else:
+			return -1;
+
+
+
 
 	def main():
 		user = 'beckerr2'
