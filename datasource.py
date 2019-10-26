@@ -124,7 +124,7 @@ class DataSource:
 		return []
 
 	def getKickstartersInStaffPick(self, pick):
-		'''
+		''' 
         Returns a list of all of the kickstarter projects that are in the given staff pick state.
 
         PARAMETERS:
@@ -271,9 +271,9 @@ class DataSource:
 			print ("Something went wrong when executing the query: ", e)
 			return None
 
-	def convertCurency(self, amount, cur_currency):
+	def convertCurency(self, amount, cur_currency):  #Not one of our database query methods.  Don't grade.
 		'''
-		Returns a double that represents "amount" converted to USD
+		Returns a double that represents "amount" converted to USD or -1 if the currency type is not present in the dataset.
 
 		PAREMETERS:
 		amount - amount of money
@@ -281,7 +281,7 @@ class DataSource:
 
 		RETURN:
 		a double that represents "amount" converted to USD, or -1 if incorrect currency
-		'''
+		'''  
 		aud = 0.68
 		cad = .77
 		chf = 1.01
@@ -325,7 +325,7 @@ class DataSource:
 		else if cur_currency == "SGD":
 			return amount*sgd
 		else:
-			return -1;
+			return -1
 
 
 
