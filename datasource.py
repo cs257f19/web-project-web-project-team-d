@@ -345,8 +345,10 @@ def main():
 	ds = DataSource()
 	ds.connect(user, password)
 
-	print(ds.getUniqueCurrencies())
+	list = ds.getKickstartersInSpotlight('T')
 
+	for i in range (0,10)
+		print (list[i])
 	ds.disconnect()
 
 
