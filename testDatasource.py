@@ -19,6 +19,16 @@ class DatasourceTester(unittest.TestCase):
                 break
         self.assertTrue(result)
 
+    def test_in_spotlight_true_input_false(self):
+        input = "F"
+        list = self.ds.getKickstartersInSpotlight(input)
+        result = True
+        for row in list:
+            if row[10].upper() != 'T':
+                result = False
+                break
+        self.assertFalse(result)
+
     def test_in_spotlight_false(self):
         input = "f"
         list = self.ds.getKickstartersInSpotlight(input)
@@ -28,6 +38,16 @@ class DatasourceTester(unittest.TestCase):
                 result = False
                 break
         self.assertTrue(result)
+
+    def test_in_spotlight_false_input_true(self):
+        input = "T"
+        list = self.ds.getKickstartersInSpotlight(input)
+        result = True
+        for row in list:
+            if row[10].upper() != 'F':
+                result = False
+                break
+        self.assertFalse(result)
 
     def test_in_spotlight_bad_input(self):
         input = 0
