@@ -14,7 +14,7 @@ class DatasourceTester(unittest.TestCase):
         list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
-            if row[10].upper() != 'T':
+            if row[10].upper() != input:
                 result = False
                 break
         self.assertTrue(result)
@@ -24,7 +24,7 @@ class DatasourceTester(unittest.TestCase):
         list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
-            if row[10] != 'F':
+            if row[10] != input:
                 result = False
                 break
         self.assertTrue(result)
@@ -34,7 +34,7 @@ class DatasourceTester(unittest.TestCase):
         list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
-            if row[10] != 'F':
+            if row[10] != input:
                 result = False
                 break
         self.assertTrue(result)
