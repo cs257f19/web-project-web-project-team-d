@@ -123,7 +123,7 @@ class DataSource:
 		'''
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE spotlight LIKE " +str(spotlight)
+			query = "SELECT	* FROM kickstarter WHERE spotlight LIKE '%" +str(spotlight)+"%'"
 			cursor.execute(query)
 			return cursor.fetchall()
 
