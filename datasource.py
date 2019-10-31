@@ -337,7 +337,7 @@ def main():
 	ds = DataSource()
 	ds.connect(user, password)
 
-	ds.getUniqueCurrencies()
+	print(ds.getUniqueCurrencies())
 
 	ds.disconnect()
 
