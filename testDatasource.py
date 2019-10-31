@@ -3,7 +3,7 @@ from datasource import *
 
 class DatasourceTester(unittest.TestCase):
 
-    def setUp(self) -> None:
+    def setUp(self):
         self.ds = DataSource()
 
     def test_in_spotlight_true(self):
