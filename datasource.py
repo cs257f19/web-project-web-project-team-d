@@ -121,7 +121,7 @@ class DataSource:
         RETURN:
 			a list of all of the kickstarter projects that are in the given spotlight state.
 		'''
-		return []
+		pass
 
 	def getKickstartersInStaffPick(self, pick):
 		''' 
