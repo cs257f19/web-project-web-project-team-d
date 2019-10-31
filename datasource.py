@@ -19,9 +19,7 @@ class DataSource:
 	'''
 
 	def __init__(self):
-		user = 'beckerr2'
-		password = 'barn787sign'
-		self.connection = connect(user, password)
+		self.connection = None
 
 	def connect(self, user, password):
 		'''
@@ -345,10 +343,7 @@ def main():
 	password = 'barn787sign'
 
 	ds = DataSource()
-	'''
 	ds.connect(user, password)
-	'''
-	
 
 	list = ds.getKickstartersInSpotlight('T')
 

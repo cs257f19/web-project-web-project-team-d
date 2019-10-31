@@ -5,6 +5,9 @@ class DatasourceTester(unittest.TestCase):
 
     def setUp(self) -> None:
         self.ds = DataSource()
+        user = 'beckerr2'
+        password = 'barn787sign'
+        ds.connect(user, password)
 
     def test_in_spotlight_true(self):
         input = "T"
