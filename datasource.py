@@ -347,7 +347,7 @@ def main():
 
 	list = ds.getKickstartersInSpotlight('T')
 
-	for i in range (0,10)
+	for i in range (0,10):
 		print (list[i])
 	ds.disconnect()
 
