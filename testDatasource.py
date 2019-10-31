@@ -7,7 +7,7 @@ class DatasourceTester(unittest.TestCase):
         self.ds = DataSource()
 
     def test_in_spotlight_true(self):
-        input = 'T'
+        input = "T"
         list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
