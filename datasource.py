@@ -121,7 +121,15 @@ class DataSource:
         RETURN:
 			a list of all of the kickstarter projects that are in the given spotlight state.
 		'''
-		pass
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE spotlight = " +str(spotlight)
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 	def getKickstartersInStaffPick(self, pick):
 		''' 
