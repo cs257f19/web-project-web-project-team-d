@@ -11,7 +11,7 @@ class DatasourceTester(unittest.TestCase):
 
     def test_in_spotlight_true(self):
         input = "T"
-        list = self.ds.getKickstartersInSpotlight('T')
+        list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
             if row[10].upper() != 'T':
@@ -19,6 +19,15 @@ class DatasourceTester(unittest.TestCase):
                 break
         self.assertTrue(result)
 
+    def test_in_spotlight_false(self):
+        input = "F"
+        list = self.ds.getKickstartersInSpotlight(input)
+        result = True
+        for row in list:
+            if row[10].upper() != 'F':
+                result = False
+                break
+        self.assertTrue(result)
 
 
 if __name__ == '__main__':
