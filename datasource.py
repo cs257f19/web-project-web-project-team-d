@@ -298,31 +298,31 @@ class DataSource:
 		usd = 1
 		if cur_currency == "USD":
 			return amount
-		else if cur_currency == "EUR":
+		elif cur_currency == "EUR":
 			return amount*eur
-		else if cur_currency == "CAD":
+		elif cur_currency == "CAD":
 			return amount*cad
-		else if cur_currency == "AUD":
+		elif cur_currency == "AUD":
 			return amount*aud
-		else if cur_currency == "CHF":
+		elif cur_currency == "CHF":
 			return amount*chf
-		else if cur_currency == "DKK":
+		elif cur_currency == "DKK":
 			return amount*dkk
-		else if cur_currency == "GBP":
+		elif cur_currency == "GBP":
 			return amount*gbp
-		else if cur_currency == "HKD":
+		elif cur_currency == "HKD":
 			return amount*hkd
-		else if cur_currency == "JPY":
+		elif cur_currency == "JPY":
 			return amount*jpy
-		else if cur_currency == "MXN":
+		elif cur_currency == "MXN":
 			return amount*mxn
-		else if cur_currency == "NOK":
+		elif cur_currency == "NOK":
 			return amount*nok
-		else if cur_currency == "NZD":
+		elif cur_currency == "NZD":
 			return amount*nzd
-		else if cur_currency == "SEK":
+		elif cur_currency == "SEK":
 			return amount*sek
-		else if cur_currency == "SGD":
+		elif cur_currency == "SGD":
 			return amount*sgd
 		else:
 			return -1
