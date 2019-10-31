@@ -3,12 +3,12 @@ from datasource import *
 
 class DatasourceTester(unittest.TestCase):
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.ds = DataSource()
 
     def test_in_spotlight_true(self):
         input = "T"
-        list = self.ds.getKickstartersInSpotlight(input)
+        list = self.ds.getKickstartersInSpotlight('T')
         result = True
         for row in list:
             if row[10].upper() != 'T':
