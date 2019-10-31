@@ -19,7 +19,7 @@ class DataSource:
 	'''
 
 	def __init__(self):
-		self.connection = null
+		self.connection = None
 
 	def connect(self, user, password):
 		'''
@@ -32,11 +32,11 @@ class DataSource:
 		Note: exits if a connection cannot be established.
 		'''
 		try:
-			connection = psycopg2.connect(host="localhost",database=user, user=user, password=password)
+			self.connection = psycopg2.connect(host="localhost",database=user, user=user, password=password)
 		except Exception as e:
 			print("Connection error: ", e)
 			exit()
-		return connection
+		return self.connection
 
 	def disconnect(self):
 			self.connection.close()
@@ -76,7 +76,7 @@ class DataSource:
 		'''
 
 		try:
-			cursor = connection.cursor()
+			cursor = self.connection.cursor()
 			query = "SELECT	* FROM kickstarter WHERE currency = " +str(currency)
 			cursor.execute(query)
 			return cursor.fetchall()
@@ -240,7 +240,7 @@ class DataSource:
 			a list with only the number of backers and pledged amount
 		'''
 		try:
-			cursor = connection.cursor()
+			cursor = self.connection.cursor()
 			query = "SELECT	backers_count, pledged FROM kickstarter"
 			cursor.execute(query)
 			return cursor.fetchall()
@@ -262,7 +262,7 @@ class DataSource:
 			a list with only the strings representing unique currencies
 		'''
 		try:
-			cursor = connection.cursor()
+			cursor = self.connection.cursor()
 			query = "SELECT	DISTINCT currency FROM kickstarter"
 			cursor.execute(query)
 			return cursor.fetchall()
@@ -330,15 +330,15 @@ class DataSource:
 
 
 
-	def main():
-		user = 'beckerr2'
-		password = getpass.getpass()
+def main():
+	user = 'beckerr2'
+	password 'barn787sign'
 
-		ds = DataSource()
-		ds.connect(user, password)
+	ds = DataSource()
+	ds.connect(user, password)
 
-		ds.disconnect()
+	ds.disconnect()
 
 
-	if __name__ == "__main__":
-		main()
+if __name__ == "__main__":
+	main()
