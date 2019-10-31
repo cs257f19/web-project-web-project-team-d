@@ -332,7 +332,7 @@ class DataSource:
 
 def main():
 	user = 'beckerr2'
-	password 'barn787sign'
+	password = 'barn787sign'
 
 	ds = DataSource()
 	ds.connect(user, password)
