@@ -20,15 +20,17 @@ class DatasourceTester(unittest.TestCase):
         self.assertTrue(result)
 
     def test_in_spotlight_false(self):
-        input = "F"
+        input = "f"
         list = self.ds.getKickstartersInSpotlight(input)
         result = True
         for row in list:
-            if row[10].upper() != 'F':
+            if row[10] != 'F':
                 result = False
                 break
         self.assertTrue(result)
 
+    def test_in_spotlight_bad_input(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
