@@ -40,7 +40,7 @@ def greet(person):
     return render_template('greet.html',
                            person=person)
 
-@app.route('/fruit')
+@app.route('/fruit/')
 def fruit():
     myFruit = [
         {'name': 'apple', 'rating': 7},
