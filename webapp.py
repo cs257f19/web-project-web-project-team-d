@@ -40,7 +40,7 @@ def defaultComparison():
         ds = datasource.DataSource()
         ds.connect('beckerr2', 'barn787sign')
 
-        if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
+        if (field1 == "Backer Count" and field2 == "Pledged Amount" and spotlight == "IDC" and staffpick == "IDC"):
 
             table = []
             table = ds.getBackersAndPledged()
