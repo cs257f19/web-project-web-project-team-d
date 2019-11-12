@@ -32,11 +32,13 @@ def defaultComparison():
         field1 = request.form["DV1"]
         
         field2 = request.form["DV2"]
+
+
+        staffpick = request.form["staffPick"]
         return "wow..!!!!!"
     return render_template('datapage.html')
 
 '''
-        staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
 
         ds = datasource.DataSource()
