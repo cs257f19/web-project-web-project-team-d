@@ -118,7 +118,18 @@
       
       <div class="row">
       	<div class="col-12">
-          <h4>{{field1}} vs {{field2}}</h4>
+		  <h4>{{field1}} vs {{field2}}</h4>
+		 <tr>
+			 <th>{{field1}}</th>
+			 <th>{{field2}}</th>
+		</tr> 
+		 
+		  <tr>
+			  {% for row in table %}
+				  <td>{{row[0]}}</td>
+				  <td>{{row[1]}}</td>
+				  {% endfor %}
+		  </tr>
       	</div>
     	</div>
       
