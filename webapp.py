@@ -45,7 +45,7 @@ def defaultComparison():
             table = []
             table = ds.getBackersAndPledged()
             while True:
-                print table
+                print(table)
 
             return render_template('datapage.html', field1=field1, field2=field2)
             
