@@ -30,8 +30,10 @@ def defaultComparison():
     if request.method == 'POST':
        
         field1 = request.form["DV1"]
-        return "wow..!"
-        '''field2 = request.form["DV2"]
+        
+        field2 = request.form["DV2"]
+        return "wow..!!!!!"
+'''
         staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
 
