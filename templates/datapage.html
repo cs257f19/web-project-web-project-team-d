@@ -48,6 +48,9 @@
   	</div>
     
     <div class="row">
+
+		<form name = results method='POST'>
+
       
     	<div class="col-3">
 			<!--
@@ -59,13 +62,12 @@
 				</select>
 			-->
 
-			<form name = results method='POST'>
+				
 				<fieldset id="dataValues1">
 					<input type="radio" name="DV1" value="backerCount"> Backer Count<br>
 					<input type="radio" name="DV1" value="goal"> Goal ($USD)<br>
 					<input type="radio" name="DV1" value="pledgedAmount"> Pledged Amount<br>
 				</fieldset>
-
 				<fieldset id="dataValues2">
 						<input type="radio" name="DV2" value="backerCount"> Backer Count<br>
 						<input type="radio" name="DV2" value="goal"> Goal ($USD)<br>
@@ -73,7 +75,6 @@
 				</fieldset>
 
 				<input type="submit" value="Submit">
-			</form>
     	</div>
       	<div class="col-3">
 			<!--
@@ -96,7 +97,10 @@
   				<input type="checkbox" value = "spotlight">
   				<span class="checkmark"></span>
 				</label>
-      </div>
+	  </div>
+	  
+	</form>
+
       
       <div class="row">
       	<div class="col-12">
