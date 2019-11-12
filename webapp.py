@@ -8,7 +8,7 @@
     "hello world" app found at http://flask.pocoo.org/.
 '''
 import flask
-from flask import render_template
+from flask import render_template, request, redirect
 import json
 import sys
 
@@ -24,7 +24,7 @@ def about():
     return render_template('aboutpage.html')
 
 
-@app.route('/comparison/') #COMPARISON, do stuff.
+@app.route('/comparison/', methods=['POST']) #COMPARISON, do stuff.
 def defaultComparison():
     return render_template('datapage.html')
 
