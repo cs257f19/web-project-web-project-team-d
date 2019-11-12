@@ -5,7 +5,7 @@
     height: 100%;
     margin: 0px;
     padding: 0px;
-  	overflow-x: hidden;
+    	overflow-x: visible;
 }
     
     * {box-sizing: border-box;}
@@ -23,12 +23,12 @@ body {
 table {
   border-collapse: collapse;
   width: 100%;
-  overflow: scroll;
+
 }
 th, td {
   text-align:left;
   padding:8px;
-  overflow: scroll;
+
 }
 tr:nth-child(even) {background-color: gray;}
 
