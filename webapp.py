@@ -15,14 +15,18 @@ import datasource
 
 app = flask.Flask(__name__)
 
+
+#No data processing on this page.
 @app.route('/') #DEFAULT HOMEPAGE
 def home():
     return render_template('HomePage.html')
 
 
+#No data processing on this page.
 @app.route('/about/') #ABOUT
 def about():
     return render_template('aboutpage.html')
+
 
 
 @app.route('/comparison/' , methods=['POST' , 'GET']) #COMPARISON, do stuff.
@@ -31,9 +35,7 @@ def defaultComparison():
     if request.method == 'POST':
        
         field1 = request.form["DV1"]
-        
         field2 = request.form["DV2"]
-
         spotlight = request.form["SL"]
         staffpick = request.form["SP"]
 
@@ -45,11 +47,7 @@ def defaultComparison():
             table = []
             table = ds.getBackersAndPledged()
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2)
-            
-            
-        #return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)    
-    
+            return render_template('datapage.html', table=table, field1=field1, field2=field2)    
     return render_template('datapage.html')
 
 
