@@ -42,7 +42,7 @@ def defaultComparison():
         if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
             
             table = ds.getBackersAndPledged()
-            return ("wao")
+            return (table)
             
             
         #return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)    
