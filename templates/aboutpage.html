@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kickstarter Tool: About Page</title>
+    <link rel="stylesheet" href = "aboutstyle.css" />
+
+	<!--[if lt IE 9]><script src="/r10/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+
+	<article>
+		<h1>Kickstarter Comparison Tool</h1>
+    
+  <div class="topnav">
+  <a href="#home">Home</a>
+  <a class="active" href = "#about">About</a>
+
+  <a href="#comparison">Comparison</a>
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+		<section id="main_content">
+      <p><b>About the Data Set:</b> We got our dataset(s) from the website  <a href="https://webrobots.io/kickstarter-datasets/">Webrobots.io</a>, which uses crawling software to compile CSV files containing information about kickstarters as of certain dates (current data downloaded on 10/10/2019). The founders of that website are Tomas Vitulskis and Paulius Jonaitis. The dataset is a collection of csv files that contain various information such as the number of backers, amount pledged, date started and ended, etc, organized by date. In order to reduce the size of the database, we eliminated parameters such as links to individual profiles of the listed kickstarters, location information, image links, and similar information that would be of limited use for determining trends or finding individual kickstarters. </p>
+
+      <p><b>How we used the data:</b> In order to reduce the size of the database, we eliminated variables such as the links to the individual profiles of the listed kickstarters, location information, image links, and similar information that would be of limited use for determining trends or finding individual kickstarters. We also only used the data from August 2019, due to memory constraints.</p>
+      <p><b>Terms of use:</b> There are no clear terms of use that are stated on Web Robots, and there is no suggested citation. The openness of the website seems to suggest unrestricted use of the dataset, especially since all of the information collected is public on Kickstarter.</p>
+      
+      <p><b>Kickstarter:</b> For more information on Kickstarter itself, please refer to their "about us page:" <a href="https://www.kickstarter.com/about?ref=global-footer">Kickstarter About Us</a> </p>
+		</section>
+	</article>
+</body>
+  
+
+</html>
