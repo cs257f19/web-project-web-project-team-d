@@ -35,26 +35,19 @@ def defaultComparison():
 
         spotlight = request.form["SL"]
         staffpick = request.form["SP"]
-        return "wow..!!!!!"
-    return render_template('datapage.html')
-
-'''
-        
 
         ds = datasource.DataSource()
 
-        if (field1 == "backerCount" and field2 == "pledgedAmount"):
+        if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
             
-            table = ds.getBackersAndPledged()'''
-
+            table = ds.getBackersAndPledged()
+            return ("wao")
             
-            #Call getBackersAndPledged which returns a list of tuples with backeramount/pledged amount
-            #Display list in a table?   [HANDLED]
-
-
             
+        #return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)    
+    
+    return render_template('datapage.html')
 
-        # return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
 
 
 
