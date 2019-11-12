@@ -345,9 +345,9 @@ def main():
 	ds = DataSource()
 	ds.connect(user, password)
 
-	list = ds.getKickstartersInSpotlight('T')
+	list = ds.getBackersAndPledged()
 
-	for i in range (0,10):
+	for i in range (0,100):
 		print (list[i])
 	ds.disconnect()
 
