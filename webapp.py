@@ -41,6 +41,8 @@ def defaultComparison():
         ds.connect('beckerr2', 'barn787sign')
 
         if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
+
+            return (ds.getUniqueCurrencies())
             table = []
             table = ds.getBackersAndPledged()
             return render_template('datapage.html', field1=field1, field2=field2)
