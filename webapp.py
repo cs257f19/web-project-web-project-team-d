@@ -33,13 +33,13 @@ def defaultComparison():
         
         field2 = request.form["DV2"]
 
-
-        staffpick = request.form["staffPick"]
+        spotlight = request.form["SL"]
+        staffpick = request.form["SP"]
         return "wow..!!!!!"
     return render_template('datapage.html')
 
 '''
-        spotlight = request.form["spotlight"]
+        
 
         ds = datasource.DataSource()
 
