@@ -38,7 +38,7 @@ def defaultComparison():
         staffpick = request.form["SP"]
 
         ds = datasource.DataSource()
-        ds.connect(beckerr2, barn787sign)
+        ds.connect('beckerr2', 'barn787sign')
         return "waaaoooooow"
 
         if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
