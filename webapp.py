@@ -33,7 +33,7 @@ def defaultComparison():
         staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
 
-    return render_template('datapage.html')
+    return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
