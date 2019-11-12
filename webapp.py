@@ -32,9 +32,8 @@ def defaultComparison():
         field2 = request.form["DV2"]
         staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
-        #return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
-        return ("wow! this is intuitive.")
-        
+        return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
+
     return render_template('datapage.html')
 
 
