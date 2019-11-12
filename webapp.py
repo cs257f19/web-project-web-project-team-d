@@ -28,11 +28,28 @@ def about():
 def defaultComparison():
     
     if request.method == 'POST':
+        return "wow..."
+
+        '''
         field1 = request.form["DV1"]
         field2 = request.form["DV2"]
         staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
-        return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
+
+        ds = datasource.DataSource()
+
+        if (field1 == "backerCount" and field2 == "pledgedAmount"):
+            
+            table = ds.getBackersAndPledged()'''
+
+            
+            #Call getBackersAndPledged which returns a list of tuples with backeramount/pledged amount
+            #Display list in a table?   [HANDLED]
+
+
+            
+
+        # return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
 
     return render_template('datapage.html')
 
