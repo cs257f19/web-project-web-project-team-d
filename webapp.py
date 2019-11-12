@@ -24,7 +24,7 @@ def about():
     return render_template('aboutpage.html')
 
 
-@app.route('/comparison/' ''', methods=['POST']''') #COMPARISON, do stuff.
+@app.route('/comparison/') #COMPARISON, do stuff.
 def defaultComparison():
     '''
     if request.method == 'POST':
