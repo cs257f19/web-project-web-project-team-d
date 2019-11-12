@@ -42,7 +42,7 @@ def defaultComparison():
         if (field1 == "backerCount" and field2 == "pledgedAmount" and spotlight == "IDC" and staffpick == "IDC"):
             table = []
             table = ds.getBackersAndPledged()
-            return (table[1])
+            return render_template('datapage.html', field1=field1, field2=field2)
             
             
         #return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)    
