@@ -33,6 +33,8 @@ def defaultComparison():
         
         field2 = request.form["DV2"]
         return "wow..!!!!!"
+    return render_template('datapage.html')
+
 '''
         staffpick = request.form["staffPick"]
         spotlight = request.form["spotlight"]
@@ -51,8 +53,6 @@ def defaultComparison():
             
 
         # return render_template('datapage.html', field1=field1, field2=field2, staffpick=staffpick, spotlight=spotlight)
-
-    return render_template('datapage.html')
 
 
 
