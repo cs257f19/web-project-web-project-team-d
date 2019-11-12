@@ -26,6 +26,13 @@ def about():
 
 @app.route('/comparison/', methods=['POST']) #COMPARISON, do stuff.
 def defaultComparison():
+    
+    if request.method == 'POST':
+        field1 = request.form["DV1"]
+        field2 = request.form["DV2"]
+        staffpick = request.form["staffPick"]
+        spotlight = request.form["spotlight"]
+
     return render_template('datapage.html')
 
 if __name__ == '__main__':
