@@ -30,7 +30,7 @@ th, td {
   padding:8px;
 
 }
-tr:nth-child(even) {background-color: gray;}
+tr:nth-child(even) {background-color: #ddd;}
 
 
 .topnav {
