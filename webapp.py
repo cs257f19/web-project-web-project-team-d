@@ -18,7 +18,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 
 #No data processing on this page
 @app.route('/') #DEFAULT HOMEPAGE
-def home():
+def default():
     return render_template('HomePage.html')
 
 #No data processing on this page.
