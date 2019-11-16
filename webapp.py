@@ -16,9 +16,13 @@ import datasource
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 
+#No data processing on this page
+@app.route('/') #DEFAULT HOMEPAGE
+def home():
+    return render_template('HomePage.html')
 
 #No data processing on this page.
-@app.route('/') #DEFAULT HOMEPAGE
+@app.route('/home') #DEFAULT HOMEPAGE
 def home():
     return render_template('HomePage.html')
 
