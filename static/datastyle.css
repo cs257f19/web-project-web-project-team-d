@@ -128,9 +128,9 @@ tr:nth-child(even) {background-color: #ddd;}
 			clear: left;
 		}
 
-		h1 {
-			font-size: 20px;
-			font-weight: 120;
+    h1 {
+			font-size: 30px;
+			font-weight: 100;
 			letter-spacing: 2px;
 			text-align: center;
 		}
