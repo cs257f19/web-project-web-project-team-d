@@ -85,19 +85,6 @@ class DataSource:
 			print ("Something went wrong when executing the query: ", e)
 			return None
 
-
-	def getKickstartersInCategory(self, category):
-		'''
-        Returns a list of all of the kickstarter projects that are in the specified category.
-
-        PARAMETERS:
-            category - The category of the project (integer values)
-
-        RETURN:
-            a list of all of the kickstarter projects that are in the specfied category.
-        '''
-		return []
-
 	def getKickstartersInState(self, state):
 		'''
         Returns a list of all of the kickstarter projects that are in the given state.
@@ -109,7 +96,15 @@ class DataSource:
         RETURN:
 			a list of all of the kickstarter projects that are in the given state
 		'''
-		return []
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE current_state LIKE '%" +str(state)+"%'"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 	def getKickstartersInSpotlight(self, spotlight):
 		'''
@@ -132,7 +127,7 @@ class DataSource:
 			return None
 
 	def getKickstartersInStaffPick(self, pick):
-		''' 
+		'''
         Returns a list of all of the kickstarter projects that are in the given staff pick state.
 
         PARAMETERS:
@@ -141,7 +136,15 @@ class DataSource:
         RETURN:
 			a list of all of the kickstarter projects that are in the given staff pick state.
 		'''
-		return []
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE staff_pick LIKE '%" +str(pick)+"%'"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 	def getKickerstartersInGoalRange(self, goal_max, goal_min = 0):
 		'''
@@ -182,60 +185,6 @@ class DataSource:
         '''
 		return []
 
-	def getKickstartersCreatedInDateRange(self, start, end):
-		'''
-        Returns a list of all of the kickstarter projects that were created in the specified date range.
-
-        PARAMETERS:
-            start - the starting date of the range in unix time
-            end - the ending date of the range in unix time
-
-        RETURN:
-            a list of all of the kickstarter projects that were created in the specified date range.
-        '''
-		return []
-
-
-	def getKickstartersLaunchedInDateRange(self, start, end):
-		'''
-        Returns a list of all of the kickstarter projects that were launched in the specified date range.
-
-        PARAMETERS:
-            start - the starting date of the range in unix time
-            end - the ending date of the range in unix time
-
-        RETURN:
-            a list of all of the kickstarter projects that were launched in the specified date range.
-        '''
-		return []
-
-	def getKickstartersDeadlineInDateRange(self, start, end):
-		'''
-        Returns a list of all of the kickstarter projects whose deadlines are in the specified date range.
-
-        PARAMETERS:
-            start - the starting date of the range in unix time
-            end - the ending date of the range in unix time
-
-        RETURN:
-            a list of all of the kickstarter projects whose deadlines are in the specified date range.
-        '''
-		return []
-
-	def getKickstartersStateChangedInDateRange(self, start, end):
-		'''
-        Returns a list of all of the kickstarter projects whose states changed in the specified date range.
-
-        PARAMETERS:
-            start - the starting date of the range in unix time
-            end - the ending date of the range in unix time
-
-        RETURN:
-            a list of all of the kickstarter projects whose states changed in the specified date range.
-        '''
-		return []
-
-
 	def getBackersAndPledged(self):
 		'''
 		Returns a list with only the number of backers and pledged amount
@@ -256,7 +205,6 @@ class DataSource:
 		except Exception as e:
 			print ("Something went wrong when executing the query: ", e)
 			return None
-
 
 	def getUniqueCurrencies(self):
 		'''
@@ -289,7 +237,7 @@ class DataSource:
 
 		RETURN:
 		a double that represents "amount" converted to USD, or -1 if incorrect currency
-		'''  
+		'''
 		aud = 0.68
 		cad = .77
 		chf = 1.01
