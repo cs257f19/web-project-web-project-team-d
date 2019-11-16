@@ -14,6 +14,7 @@ import sys
 import datasource
 
 app = flask.Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT']=0
 
 
 #No data processing on this page.
@@ -31,9 +32,9 @@ def about():
 
 @app.route('/comparison/' , methods=['POST' , 'GET']) #COMPARISON, do stuff.
 def defaultComparison():
-    
+
     if request.method == 'POST':
-       
+
         field1 = request.form["DV1"]
         field2 = request.form["DV2"]
         spotlight = request.form["SL"]
@@ -47,7 +48,7 @@ def defaultComparison():
             table = []
             table = ds.getBackersAndPledged()
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2)    
+            return render_template('datapage.html', table=table, field1=field1, field2=field2)
     return render_template('datapage.html')
 
 
