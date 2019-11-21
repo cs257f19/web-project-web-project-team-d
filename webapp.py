@@ -63,12 +63,14 @@ def defaultComparison():
             for row in table:
                 for index in row:
                     bestTable.append(index)
+            
+            print(bestTable)
 
                 
 
 
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newTable)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, bestTable = bestTable)
     return render_template('datapage.html')
 
 
