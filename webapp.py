@@ -55,7 +55,8 @@ def defaultComparison():
             newTable = []
             i=0
             for row in table:
-                newTable.append([row[0], row[1]])
+                rowX = [row[0], row[1] ]
+                newTable.append(rowX)
                 i = i+1
 
             return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newTable)
