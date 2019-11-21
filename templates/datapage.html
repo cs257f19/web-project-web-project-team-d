@@ -122,10 +122,10 @@
 
    <script type="text/javascript">
 	 var List1 =  []
-	 var i = 1
-	 for (row in {{newTable}}) {
-		 List1.push({x: {{row[0]}}, y: {{row[1]}} })
-		 i = i +1
+	 var len = {{bestTable}}.length
+	 for ( i =0; i < len; i=i+2) {
+		 List1.push({x: {{bestTable[i]}}, y: {{bestTable[i+1]}} })
+
 	 }
 
    window.onload = function () {
