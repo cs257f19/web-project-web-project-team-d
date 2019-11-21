@@ -68,7 +68,7 @@ def defaultComparison():
 
 
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, bestTable = bestTable)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newTable)
     return render_template('datapage.html')
 
 
