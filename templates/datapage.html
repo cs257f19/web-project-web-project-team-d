@@ -124,10 +124,12 @@
 	 var List1 =  []
 	 var List2 = [[1, 1], [2, 2], [3, 3]]
 	 var List3 = []
-	 for ( row in List2) {
-		 List3.push({x: row[0], y: row[1]})
-	 }
 	 var i = 0
+	 for ( row in List2) {
+		 List3.push({x: i, y: i})
+		 i = i+1
+	 }
+
 	 var len = {{newTable}}.length
 	 for ( rows in {{newTable}}) {
 	 		List1.push({x: {{newTable}}[0], y: {{newTable}}[1] })
