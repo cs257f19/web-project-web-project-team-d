@@ -58,7 +58,7 @@ def defaultComparison():
             #    rowX = [row[0], row[1]
             #    newTable.append(rowX)
             #    i = i+1
-            
+
             bestTable = []
             for row in table:
                 for index in row:
