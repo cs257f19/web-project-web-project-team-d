@@ -52,12 +52,21 @@ def defaultComparison():
             table = []
             table = ds.getBackersAndPledged()
 
-            newTable = []
-            i=0
+            #newTable = []
+            #i=0
+            #for row in table:
+            #    rowX = [row[0], row[1]
+            #    newTable.append(rowX)
+            #    i = i+1
+            
+            bestTable = []
             for row in table:
-                rowX = [row[0], row[1] ]
-                newTable.append(rowX)
-                i = i+1
+                for index in row:
+                    print(index)
+
+                
+
+
 
             return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newTable)
     return render_template('datapage.html')
