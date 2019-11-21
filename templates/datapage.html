@@ -122,9 +122,10 @@
 
    <script type="text/javascript">
 	 var List1 =  []
+	 var i = 1
 	 for (row in {{table}}) {
-		 List1.push({x: {{row[0]}}, y: {{row[1]}} })
-
+		 List1.push({x: i, y: i })
+		 i = i +1
 	 }
 
    window.onload = function () {
