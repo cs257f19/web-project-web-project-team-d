@@ -55,7 +55,7 @@ def defaultComparison():
             newTable = []
             i=0
             for row in table:
-                rowX = [row[0], row[1]
+                rowX = [row[0], row[1]]
                 newTable.append(rowX)
                 i = i+1
 
