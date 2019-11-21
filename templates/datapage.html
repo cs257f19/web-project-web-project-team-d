@@ -123,9 +123,9 @@
    <script type="text/javascript">
 	 var List1 =  []
 	 var i = 0
-	 var len = {{bestTable}}.length
-	 for ( i =0; i < len; i=i+2) {
-		 List1.push({x: {{bestTable[i]}}, y: {{bestTable[i+1]}} })
+	 var len = {{newTable}}.length
+	 for ( rows in {{newTable}}) {
+		 List1.push({x: {{newTable}}[0], y: {{newTable[i+1]}}[1] })
 
 	 }
 
