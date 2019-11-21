@@ -62,7 +62,7 @@ def defaultComparison():
             bestTable = []
             for row in table:
                 for index in row:
-                    print(index)
+                    bestTable.append(index)
 
                 
 
