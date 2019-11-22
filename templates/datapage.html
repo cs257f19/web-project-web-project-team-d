@@ -134,7 +134,6 @@ function buildGraph (graphdata) {
 		zoomEnabled: true,
       title:{
        text: "x: {{field1}} vs y: {{field2}}"
-	   valueFormatString: "$#,##0k"
      },
 
      data: [
@@ -157,9 +156,8 @@ function buildGraph (graphdata) {
 	 console.log("Got newtable of length "+newtable.length);
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
-	 for ( rows in newtable) {
+	 for (var i =0; i < 10; i++) {
 	 		List1.push({x: (rows[0]), y: (rows[1]) })
-
 	 }
 	 console.log("Built");
 	 console.log(List1);
