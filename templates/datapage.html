@@ -121,6 +121,24 @@
 
 
    <script type="text/javascript">
+
+function buildGraph (graphdata) {
+     var chart = new CanvasJS.Chart("chartContainer",
+     {
+      title:{
+       text: "x: {{field1}} vs y: {{field2}}"
+     },
+
+     data: [
+     {
+      type: "scatter",
+      dataPoints: graphdata
+    }
+    ]
+	 });
+    chart.render();
+  }
+
 	 var List1 =  []
 	 var i = 1
 
@@ -135,23 +153,10 @@
 	 }
 	 console.log("Built");
 	 console.log(List1);
+	 buildGraph(List1);
 
 
-  function buildGraph () {
-     var chart = new CanvasJS.Chart("chartContainer",
-     {
-      title:{
-       text: "x: {{field1}} vs y: {{field2}}"
-     },
-
-     data: [
-     {
-      type: "scatter",
-      dataPoints: List1
-    }
-    ]
-    chart.render();
-  }}
+ 
 
  </script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
