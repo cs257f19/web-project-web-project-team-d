@@ -129,8 +129,11 @@ function buildGraph (graphdata) {
 	var chartContainer = document.getElementById("charContainer");
      var chart = new CanvasJS.Chart(chartContainer,
      {
+		animationEnabled: true,
+		zoomEnabled: true,
       title:{
        text: "x: {{field1}} vs y: {{field2}}"
+	   valueFormatString: "$#,##0k"
      },
 
      data: [
