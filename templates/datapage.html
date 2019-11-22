@@ -156,16 +156,16 @@ function buildGraph (graphdata) {
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
 	 for (rows in newtable) {
-	 		List1.push({x: (rows[0]), y: rows[1]})
+	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
 	 }
 	 console.log("Built");
-	 buildGraph(newtable);
+	 buildGraph(List1);
 
 
  
 
  </script>
-		<!--
+	<!--
 		  <table>
 				<tr style="text-align: center;">
 					<th>{{field1}}</th>
@@ -181,7 +181,7 @@ function buildGraph (graphdata) {
 					{% endfor %}
 
 		</table>
-		-->
+	-->
       	</div>
     	</div>
 
