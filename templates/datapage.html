@@ -126,7 +126,8 @@
    <script type="text/javascript">
 
 function buildGraph (graphdata) {
-	var chartContainer = document.getElementById("charContainer");
+	console.log("In buildGraph");
+	var chartContainer = document.getElementById("chartContainer");
      var chart = new CanvasJS.Chart(chartContainer,
      {
       title:{
@@ -140,7 +141,9 @@ function buildGraph (graphdata) {
     }
     ]
 	 });
+    console.log("Rendering...");
     chart.render();
+    console.log("Rendered!");
   }
 
 	 var List1 =  []
