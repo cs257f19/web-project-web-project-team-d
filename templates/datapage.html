@@ -125,16 +125,19 @@
 	 var i = 1
 
 	 let newtable_json = "{{newTable}}";
-
 	 let newtable = JSON.parse(newtable_json);
-
+	 console.log("Got newtable of length "+newtable.length);
+	 console.log(newtable);
+	 console.log("Building internal graph structure...");
 	 for ( rows in newtable) {
 	 		List1.push({x: (rows[0]), y: (rows[1]) })
 
 	 }
+	 console.log("Built");
+	 console.log(List1);
 
 
-   window.onload = function () {
+  function buildGraph () {
      var chart = new CanvasJS.Chart("chartContainer",
      {
       title:{
@@ -147,11 +150,9 @@
       dataPoints: List1
     }
     ]
+    chart.render();
+  }}
 
-  });
-
- chart.render();
- }
  </script>
  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
