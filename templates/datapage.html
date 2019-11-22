@@ -143,6 +143,7 @@ function buildGraph (graphdata) {
     }
     ]
 	 });
+	console.log("datapoint: " + datapoints");
     console.log("Rendering...");
     chart.render();
     console.log("Rendered!");
@@ -150,7 +151,6 @@ function buildGraph (graphdata) {
 
 	 var List1 =  []
 	 var i = 1
-	 console.log(List1);
 	 let newtable_json = "{{newTable}}";
 	 let newtable = JSON.parse(newtable_json);
 	 console.log("Got newtable of length "+newtable.length);
