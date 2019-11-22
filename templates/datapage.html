@@ -124,7 +124,11 @@
 	 var List1 =  []
 	 var i = 1
 
-	 for ( rows in {{newTable}}) {
+	 let newtable_json = "{{newTable}}";
+
+	 let newtable = JSON.parse(newtable_json);
+
+	 for ( rows in newtable) {
 	 		List1.push({x: (rows[0]), y: (rows[1]) })
 
 	 }

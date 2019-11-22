@@ -66,9 +66,9 @@ def defaultComparison():
 
 
 
+            newtable_json = json.dumps(newtable)
 
-
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newTable)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
     return render_template('datapage.html')
 
 
