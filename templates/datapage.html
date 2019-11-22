@@ -155,8 +155,10 @@ function buildGraph (graphdata) {
 	 console.log("Got newtable of length "+newtable.length);
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
-	 for (rows in newtable) {
-	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
+	 console.log("Example of rows[0]...");
+         console.log(newtable[0][0]);
+	 for (let rows of newtable) {
+	 		List1.push({x: Number(rows[0]), y: Number(rows[1])});
 	 }
 	 console.log("Built");
 	 console.log(List1);
