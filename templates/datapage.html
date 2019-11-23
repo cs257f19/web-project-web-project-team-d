@@ -72,22 +72,24 @@
 
     	</div>
       	<div class="col-3">
-				<label>Y Axis
+			<label>Y Axis
+				<!--
 				<fieldset id="dataValues2">
 						<input type="radio" name="DV2" value="Backer Count"> Backer Count<br>
 						<input type="radio" name="DV2" value="Goal"> Goal ($USD)<br>
 						<input type="radio" name="DV2" value="Pledged Amount" checked> Pledged Amount<br>
 				</fieldset>
-			</label>
-
-			<!--
-  				<select class = "select_box" id = "DV2" name = "DV2">
-    				<option value="0">Data Value 2:</option>
-    				<option value="1">Backer Count</option>
-    				<option value="2">Goal ($USD)</option>
-    				<option value="3">Pledged Amount ($USD)</option>
+				-->
+				<fieldset id = "dataValues2">
+					<select class = "select_box">
+					  <option value="0" name = "DV2">Data Value 2:</option>
+					  <option value="Backer Count" name = "DV2">Backer Count</option>
+					  <option value="Goal" name = "DV2">Goal ($USD)</option>
+					  <option value="Pledged Amount" name = "DV2">Pledged Amount ($USD)</option>
 				  </select>
-			-->
+			  	</fieldset>
+			</label>
+			
 	  </div>
 
 
@@ -155,13 +157,11 @@ function buildGraph (graphdata) {
 	 console.log("Got newtable of length "+newtable.length);
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
-	 console.log("Example of rows[0]...");
-         console.log(newtable[0][0]);
-	 for (let rows of newtable) {
-	 		List1.push({x: Number(rows[0]), y: Number(rows[1])});
+	 for (rows in newtable) {
+	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
 	 }
 	 console.log("Built");
-	 console.log(List1);
+	 console.log(List1)
 	 buildGraph(List1);
 
 
