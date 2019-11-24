@@ -36,7 +36,6 @@ def about():
 
 @app.route('/comparison/' , methods=['POST' , 'GET']) #COMPARISON, do stuff.
 def defaultComparison():
-
     if request.method == 'POST':
 
         field1 = request.form["DV1"]
@@ -61,14 +60,21 @@ def defaultComparison():
                 newTable.append(rowX)
                 i = i+1
 
-            bestTable = []
+            newtable_json = json.dumps(newTable)
+
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
+        elif (field1 == "Backer Count" and field2 == "Goal" and spotlight == "IDC" and staffpick == "IDC"):
+            table = []
+            table = ds.getBackersAndGoal()
+
+            newTable = []
+            i=0
             for row in table:
-                for index in row:
-                    bestTable.append(index)
-
-            print(bestTable)
-
-
+                goal = row[2]
+                goal = ds.convertCurrency(row[1], goal)
+                rowX = [row[0], goal]
+                newTable.append(rowX)
+                i = i+1
 
             newtable_json = json.dumps(newTable)
 

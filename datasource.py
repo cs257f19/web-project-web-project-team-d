@@ -205,6 +205,26 @@ class DataSource:
 		except Exception as e:
 			print ("Something went wrong when executing the query: ", e)
 			return None
+	
+	def getBackersAndGoal(self):
+		'''
+		Returns a list with only the number of backers and pledged amount, along with currency type
+
+		PAREMETERS:
+			none
+
+		RETURN:
+			a list with only the number of backers and pledged amount
+		'''
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	backers_count, goal, currency FROM kickstarter ORDER BY pledged DESC"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
 	def getUniqueCurrencies(self):
 		'''
