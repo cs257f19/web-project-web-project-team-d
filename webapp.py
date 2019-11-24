@@ -114,6 +114,8 @@ def tableComparison():
 
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
+    return render_template(chartpage.html)
+
 
     ''' if request.method == 'POST':
 
@@ -148,7 +150,6 @@ def chartComparison():
 
             return render_template('datapage_table.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
     return render_template('datapage_table.html')'''
-        return render_template(chartpage.html)
     
 
 
