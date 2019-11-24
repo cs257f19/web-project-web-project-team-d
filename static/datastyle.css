@@ -197,6 +197,11 @@ tr:nth-child(even) {background-color: #ddd;}
 
 }
 
+.menu a {
+
+  color : #05ce78;
+}
+
 
 .menu li:hover {
   background-color: #f2f2f2;
