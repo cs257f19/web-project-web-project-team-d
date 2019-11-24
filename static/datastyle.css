@@ -198,7 +198,7 @@ tr:nth-child(even) {background-color: #ddd;}
 }
 
 .menu a {
-
+  text-decoration: none;
   color : #05ce78;
 }
 
