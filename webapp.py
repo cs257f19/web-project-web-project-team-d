@@ -63,7 +63,7 @@ def defaultComparison():
             for row in table:
                 for index in row:
                     bestTable.append(index)
-            
+
             print(bestTable)
 
 
@@ -95,7 +95,9 @@ def tableComparison():
             newTable = []
             i=0
             for row in table:
-                rowX = [row[0], row[1]]
+                currency = row[2]
+                pledged = ds.convertCurrency(row[1], currency)
+                rowX = [row[0], pledged]
                 newTable.append(rowX)
                 i = i+1
 
@@ -150,7 +152,7 @@ def chartComparison():
 
             return render_template('datapage_table.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
     return render_template('datapage_table.html')'''
-    
+
 
 
 
