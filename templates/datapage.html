@@ -23,7 +23,7 @@
     </form>
   </div>
 </div>
-\
+
 
     <div class="row">
       <div class="col-12 tools"><h2>Data Comparison</h2>
@@ -118,20 +118,20 @@
       	<div class="col-12">
 		  <h4>x: {{field1}} vs y: {{field2}}</h4>
 
+		  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+	<div id="chartContainer" style="height: 300px; width: 100%;">
+	</div>
 
    <script type="text/javascript">
-	 var List1 =  []
-	 var i = 0
-	 var len = {{bestTable}}.length
-	 for ( i =0; i < len; i=i+2) {
-		 List1.push({x: {{bestTable[i]}}, y: {{bestTable[i+1]}} })
 
-	 }
-
-   window.onload = function () {
-     var chart = new CanvasJS.Chart("chartContainer",
+function buildGraph (graphdata) {
+	console.log("In buildGraph");
+	var chartContainer = document.getElementById("chartContainer");
+     var chart = new CanvasJS.Chart(chartContainer,
      {
+		animationEnabled: true,
+		zoomEnabled: true,
       title:{
        text: "x: {{field1}} vs y: {{field2}}"
      },
@@ -139,22 +139,36 @@
      data: [
      {
       type: "scatter",
-      dataPoints: List1
+      dataPoints: graphdata
     }
     ]
+	 });
+    console.log("Rendering...");
+    chart.render();
+    console.log("Rendered!");
+  }
 
-  });
+	 var List1 =  []
+	 var i = 1
+	 let newtable_json = "{{newTable}}";
+	 let newtable = JSON.parse(newtable_json);
+	 console.log("Got newtable of length "+newtable.length);
+	 console.log(newtable);
+	 console.log("Building internal graph structure...");
+	 console.log("Example of rows[0]...");
+         console.log(newtable[0][0]);
+	 for (let rows of newtable) {
+	 		List1.push({x: Number(rows[0]), y: Number(rows[1])});
+	 }
+	 console.log("Built");
+	 console.log(List1);
+	 buildGraph(List1);
 
- chart.render();
- }
+
+ 
+
  </script>
- <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
- <body>
-   <div id="chartContainer" style="height: 300px; width: 100%;">
-   </div>
- </body>
-
+	<!--
 		  <table>
 				<tr style="text-align: center;">
 					<th>{{field1}}</th>
@@ -170,6 +184,7 @@
 					{% endfor %}
 
 		</table>
+	-->
       	</div>
     	</div>
 
