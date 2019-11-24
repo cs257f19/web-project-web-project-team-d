@@ -45,7 +45,6 @@ def defaultComparison():
 
         ds = datasource.DataSource()
         ds.connect('beckerr2', 'barn787sign')
-
         if (field1 == "Backer Count" and field2 == "Pledged Amount"):
             if(spotlight == "True"):
                 spot = "t"

@@ -199,11 +199,11 @@ class DataSource:
 		try:
 			cursor = self.connection.cursor()
 			if(spot == "t"):
-				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC WHERE spotlight='true'"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE spotlight='T' ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "f"):
-				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC WHERE spotlight='false'"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE spotlight='F' ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			else:

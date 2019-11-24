@@ -92,7 +92,7 @@
 				<input type="radio" name="SL" value="False"> Has Not Been Spotlighted<br>
 				<input type="radio" name="SL" value="IDC"> Do Not Filter<br>
 			</fieldset>
-			
+			<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>			
 			<script type="text/javascript">
 				$(function() {
 					$("input[type=\"radio\"]").click(function(){
@@ -168,7 +168,7 @@ function buildGraph (graphdata) {
 	 console.log("Got newtable of length "+newtable.length);
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
-	 for (rows in newtable) {
+	 for (let rows of newtable) {
 	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
 	 }
 	 console.log("Built");
