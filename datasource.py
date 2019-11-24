@@ -272,45 +272,45 @@ class DataSource:
 		sek = 0.10
 		sgd = 0.73
 		usd = 1
-		if cur_currency == "USD":
+		if cur_currency == 'USD':
 			return amount
-		elif cur_currency == "EUR":
+		elif cur_currency == 'EUR':
 			new_amount = eur * amount
 			return new_amount
-		elif cur_currency == "CAD":
+		elif cur_currency == 'CAD':
 			new_amount = cad * amount
 			return new_amount
-		elif cur_currency == "AUD":
+		elif cur_currency == 'AUD':
 			new_amount = aud * amount
 			return new_amount
-		elif cur_currency == "CHF":
+		elif cur_currency == 'CHF':
 			new_amount = chf * amount
 			return new_amount
-		elif cur_currency == "DKK":
+		elif cur_currency == 'DKK':
 			new_amount = dkk * amount
 			return new_amount
-		elif cur_currency == "GBP":
+		elif cur_currency == 'GBP':
 			new_amount = gbp * amount
 			return new_amount
-		elif cur_currency == "HKD":
+		elif cur_currency == 'HKD':
 			new_amount = hkd * amount
 			return new_amount
-		elif cur_currency == "JPY":
+		elif cur_currency == 'JPY':
 			new_amount = jpy * amount
 			return new_amount
-		elif cur_currency == "MXN":
+		elif cur_currency == 'MXN':
 			new_amount = mxn * amount
 			return new_amount
-		elif cur_currency == "NOK":
+		elif cur_currency == 'NOK':
 			new_amount = nok * amount
 			return new_amount
-		elif cur_currency == "NZD":
+		elif cur_currency == 'NZD':
 			new_amount = nzd * amount
 			return new_amount
-		elif cur_currency == "SEK":
+		elif cur_currency == 'SEK':
 			new_amount = sek * amount
 			return new_amount
-		elif cur_currency == "SGD":
+		elif cur_currency == 'SGD':
 			new_amount = sgd * amount
 			return new_amount
 		else:
