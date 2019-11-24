@@ -34,9 +34,9 @@
   	<div class="col-3 menu">
     	<h3>Tool Menu</h3>
     	<ul>
-      	<li class= "active">Plot Tool</li>
+				<li><a class= "button" href = "/comparison">Plot Tool</a></li>
       	<li><a class = "button" href = "/comparison/chart">Chart Tool</a></li>
-      	<li><a class = "button" href = "/comparison/table">Table Tool</a></li>
+      	<li class = "active">Table Tool</li>
       	<li><a class = "button" href = "/comparison/something">Something</a></li>
     	</ul>
  		</div>
@@ -72,16 +72,22 @@
 
     	</div>
       	<div class="col-3">
-			<label>Y Axis
-				
+				<label>Y Axis
 				<fieldset id="dataValues2">
 						<input type="radio" name="DV2" value="Backer Count"> Backer Count<br>
 						<input type="radio" name="DV2" value="Goal"> Goal ($USD)<br>
 						<input type="radio" name="DV2" value="Pledged Amount" checked> Pledged Amount<br>
 				</fieldset>
-				
 			</label>
-			
+
+			<!--
+  				<select class = "select_box" id = "DV2" name = "DV2">
+    				<option value="0">Data Value 2:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+				  </select>
+			-->
 	  </div>
 
 
@@ -112,55 +118,8 @@
       	<div class="col-12">
 		  <h4>x: {{field1}} vs y: {{field2}}</h4>
 
-		  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-	<div id="chartContainer" style="height: 300px; width: 100%;">
-	</div>
-
-   <script type="text/javascript">
-
-function buildGraph (graphdata) {
-	console.log("In buildGraph");
-	var chartContainer = document.getElementById("chartContainer");
-     var chart = new CanvasJS.Chart(chartContainer,
-     {
-		animationEnabled: true,
-		zoomEnabled: true,
-      title:{
-       text: "x: {{field1}} vs y: {{field2}}"
-     },
-
-     data: [
-     {
-      type: "scatter",
-      dataPoints: graphdata
-    }
-    ]
-	 });
-    console.log("Rendering...");
-    chart.render();
-    console.log("Rendered!");
-  }
-
-	 var List1 =  []
-	 var i = 1
-	 let newtable_json = "{{newTable}}";
-	 let newtable = JSON.parse(newtable_json);
-	 console.log("Got newtable of length "+newtable.length);
-	 console.log(newtable);
-	 console.log("Building internal graph structure...");
-	 for (rows in newtable) {
-	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
-	 }
-	 console.log("Built");
-	 console.log(List1)
-	 buildGraph(List1);
 
 
-
-
- </script>
-	<!--
 		  <table>
 				<tr style="text-align: center;">
 					<th>{{field1}}</th>
@@ -176,7 +135,7 @@ function buildGraph (graphdata) {
 					{% endfor %}
 
 		</table>
-	-->
+
       	</div>
     	</div>
 

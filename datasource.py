@@ -187,7 +187,7 @@ class DataSource:
 
 	def getBackersAndPledged(self):
 		'''
-		Returns a list with only the number of backers and pledged amount
+		Returns a list with only the number of backers and pledged amount, along with currency type
 
 
 		PAREMETERS:
@@ -198,7 +198,7 @@ class DataSource:
 		'''
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	backers_count, pledged FROM kickstarter"
+			query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -227,7 +227,7 @@ class DataSource:
 			print ("Something went wrong when executing the query: ", e)
 			return None
 
-	def convertCurency(self, amount, cur_currency):  #Not one of our database query methods.  Don't grade.
+	def convertCurrency(self, amount, cur_currency):  #Not one of our database query methods.  Don't grade.
 		'''
 		Returns a double that represents "amount" converted to USD or -1 if the currency type is not present in the dataset.
 

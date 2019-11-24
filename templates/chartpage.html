@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <title>Kickstarter Tool: Comparison page</title>
-    <link rel="stylesheet" type = "text/css" href ="{{ url_for('static', filename='datastyle.css')}}" />
+    <link rel="stylesheet" type = "text/css" href ="{{ url_for('static', filename='chartstyle.css')}}" />
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 
 
     <div class="row">
-      <div class="col-12 tools"><h2>Data Comparison</h2>
+      <div class="tools"><h2>Data Comparison</h2>
       </div>
     </div>
 
@@ -34,8 +34,8 @@
   	<div class="col-3 menu">
     	<h3>Tool Menu</h3>
     	<ul>
-      	<li class= "active">Plot Tool</li>
-      	<li><a class = "button" href = "/comparison/chart">Chart Tool</a></li>
+				<li><a class= "button" href = "/comparison">Plot Tool</a></li>
+      	<li class = "active" >Chart Tool</li>
       	<li><a class = "button" href = "/comparison/table">Table Tool</a></li>
       	<li><a class = "button" href = "/comparison/something">Something</a></li>
     	</ul>
@@ -52,6 +52,8 @@
 
 
     	<div class="col-3">
+			<h4>Backer Amount (max = 91585)
+			</h4>
 			<!--
   				<select class = "select_box"id ="DV1" name="DV1">
     				<option value="0">Data Value 1:</option>
@@ -60,28 +62,44 @@
     				<option value="3">Pledged Amount ($USD)</option>
 				</select>
 			-->
+				Min: 
+				<input type="text" name="backers_min" />
+				<br>
+				Max:
+				<input type="text" name="backers_max" />
+				<input type="submit" value="submit" />
+			</form>
+				
 
 				<label>X Axis
 				<fieldset id="dataValues1">
+				<!-- 	
+					
 					<input type="radio" name="DV1" value="Backer Count" checked> Backer Count<br>
 					<input type="radio" name="DV1" value="Goal"> Goal ($USD)<br>
-					<input type="radio" name="DV1" value="Pledged Amount"> Pledged Amount<br>
+					<input type="radio" name="DV1" value="Pledged Amount"> Pledged Amount<br>-->
 				</fieldset>
 			</label>
 
 
     	</div>
       	<div class="col-3">
-			<label>Y Axis
-				
+				<label>Y Axis
 				<fieldset id="dataValues2">
 						<input type="radio" name="DV2" value="Backer Count"> Backer Count<br>
 						<input type="radio" name="DV2" value="Goal"> Goal ($USD)<br>
 						<input type="radio" name="DV2" value="Pledged Amount" checked> Pledged Amount<br>
 				</fieldset>
-				
 			</label>
-			
+
+			<!--
+  				<select class = "select_box" id = "DV2" name = "DV2">
+    				<option value="0">Data Value 2:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+				  </select>
+			-->
 	  </div>
 
 
@@ -110,24 +128,68 @@
 
       <div class="row">
       	<div class="col-12">
-		  <h4>x: {{field1}} vs y: {{field2}}</h4>
+		 <!--  <h4>x: {{field1}} vs y: {{field2}}</h4>  -->
+		  <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+		  <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+		  <script type ="text/javascript">
 
-		  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+		  anychart.onDocumentReady(function() {
 
-	<div id="chartContainer" style="height: 300px; width: 100%;">
-	</div>
+			// set the data
+			var data = [
+				{x: "White", value: 223553265},
+				{x: "Black or African American", value: 38929319},
+				{x: "American Indian and Alaska Native", value: 2932248},
+				{x: "Asian", value: 14674252},
+				{x: "Native Hawaiian and Other Pacific Islander", value: 540013},
+				{x: "Some Other Race", value: 19107368},
+				{x: "Two or More Races", value: 9009073}
+			];
 
-   <script type="text/javascript">
+			// create the chart
+			var chart = anychart.pie();
 
-function buildGraph (graphdata) {
-	console.log("In buildGraph");
+			// set the chart title
+			chart.title("Population by Race for the United States: 2010 Census");
+
+			// add the data
+			chart.data(data);
+
+			// display the chart in the container
+			chart.container('container');
+			chart.draw();
+
+			});
+		  </script>
+
+		  <div id="container" style="width: 100%; height: 200%;"></div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--
+<script type="text/javascript">
+
+function buildChart (graphdata) {
+	console.log("In buildChart");
 	var chartContainer = document.getElementById("chartContainer");
      var chart = new CanvasJS.Chart(chartContainer,
      {
 		animationEnabled: true,
 		zoomEnabled: true,
       title:{
-       text: "x: {{field1}} vs y: {{field2}}"
+       text: "x: {{field1}} vs y: {{field2}}" //TO BE DONE
      },
 
      data: [
@@ -149,17 +211,18 @@ function buildGraph (graphdata) {
 	 console.log("Got newtable of length "+newtable.length);
 	 console.log(newtable);
 	 console.log("Building internal graph structure...");
-	 for (rows in newtable) {
-	 		List1.push({x: Number(rows[0]), y: Number(rows[1])})
+	 console.log("Example of rows[0]...");
+         console.log(newtable[0][0]);
+	 for (let rows of newtable) {
+	 		List1.push({x: Number(rows[0]), y: Number(rows[1])});
 	 }
 	 console.log("Built");
-	 console.log(List1)
+	 console.log(List1);
 	 buildGraph(List1);
 
 
 
-
- </script>
+ </script>-->
 	<!--
 		  <table>
 				<tr style="text-align: center;">
