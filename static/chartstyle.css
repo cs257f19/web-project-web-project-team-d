@@ -195,6 +195,11 @@ tr:nth-child(even) {background-color: #ddd;}
   padding: 0;
 }
 
+.menu a {
+  text-decoration: none;
+  color : #05ce78;
+}
+
 .menu li {
   padding: 8px;
   margin-bottom: 7px;
