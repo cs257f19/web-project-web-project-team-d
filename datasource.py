@@ -185,7 +185,7 @@ class DataSource:
         '''
 		return []
 
-	def getBackersAndPledged(self):
+	def getBackersAndPledged(self, spot):
 		'''
 		Returns a list with only the number of backers and pledged amount, along with currency type
 
@@ -198,9 +198,18 @@ class DataSource:
 		'''
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC"
-			cursor.execute(query)
-			return cursor.fetchall()
+			if(spot == "t")
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC WHERE spotlight='true'"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "f")
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC WHERE spotlight='false'"
+				cursor.execute(query)
+				return cursor.fetchall()
+			else:
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
 
 		except Exception as e:
 			print ("Something went wrong when executing the query: ", e)

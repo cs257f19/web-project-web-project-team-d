@@ -47,9 +47,15 @@ def defaultComparison():
         ds.connect('beckerr2', 'barn787sign')
 
         if (field1 == "Backer Count" and field2 == "Pledged Amount" and spotlight == "IDC" and staffpick == "IDC"):
-
+            if(spotlight == "True")
+                spot == "t"
+            elif(spotlight == "False")
+                spot == "f"
+            else
+                spot == "0"
+            
             table = []
-            table = ds.getBackersAndPledged()
+            table = ds.getBackersAndPledged(spot)
 
             newTable = []
             i=0
