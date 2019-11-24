@@ -255,31 +255,44 @@ class DataSource:
 		if cur_currency == "USD":
 			return amount
 		elif cur_currency == "EUR":
-			return amount*eur
+			new_amount = eur * amount
+			return new_amount
 		elif cur_currency == "CAD":
-			return amount*cad
+			new_amount = cad * amount
+			return new_amount
 		elif cur_currency == "AUD":
-			return amount*aud
+			new_amount = aud * amount
+			return new_amount
 		elif cur_currency == "CHF":
-			return amount*chf
+			new_amount = chf * amount
+			return new_amount
 		elif cur_currency == "DKK":
-			return amount*dkk
+			new_amount = dkk * amount
+			return new_amount
 		elif cur_currency == "GBP":
-			return amount*gbp
+			new_amount = gbp * amount
+			return new_amount
 		elif cur_currency == "HKD":
-			return amount*hkd
+			new_amount = hkd * amount
+			return new_amount
 		elif cur_currency == "JPY":
-			return amount*jpy
+			new_amount = jpy * amount
+			return new_amount
 		elif cur_currency == "MXN":
-			return amount*mxn
+			new_amount = mxn * amount
+			return new_amount
 		elif cur_currency == "NOK":
-			return amount*nok
+			new_amount = nok * amount
+			return new_amount
 		elif cur_currency == "NZD":
-			return amount*nzd
+			new_amount = nzd * amount
+			return new_amount
 		elif cur_currency == "SEK":
-			return amount*sek
+			new_amount = sek * amount
+			return new_amount
 		elif cur_currency == "SGD":
-			return amount*sgd
+			new_amount = sgd * amount
+			return new_amount
 		else:
 			return -1
 
