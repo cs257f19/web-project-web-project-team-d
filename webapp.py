@@ -114,7 +114,7 @@ def tableComparison():
 
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
-    return render_template(chartpage.html)
+    return render_template('chartpage.html')
 
 
     ''' if request.method == 'POST':
