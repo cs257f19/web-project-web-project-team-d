@@ -48,11 +48,11 @@ def defaultComparison():
 
         if (field1 == "Backer Count" and field2 == "Pledged Amount"):
             if(spotlight == "True"):
-                spot == "t"
+                spot = "t"
             elif(spotlight == "False"):
-                spot == "f"
+                spot = "f"
             else:
-                spot == "0"
+                spot = "0"
             
             table = []
             table = ds.getBackersAndPledged(spot)
