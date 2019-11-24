@@ -48,78 +48,70 @@
 
     <div class="row">
 
-			<form name = "results" method='POST'>
+		<form name = "results" method='POST'>
 
 
-	    	<div class="col-2">
-				<h4>Backer Amount</h4>
-					Min:
-					<input type="text" name="backers_min" />
-					<br>
-					Max:
-					<input type="text" name="backers_max" />
+    	<div class="col-3">
+			<!--
+  				<select class = "select_box"id ="DV1" name="DV1">
+    				<option value="0">Data Value 1:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+				</select>
+			-->
 
-
-
-
-					<!--
-
-						<input type="radio" name="DV1" value="Backer Count" checked> Backer Count<br>
-						<input type="radio" name="DV1" value="Goal"> Goal ($USD)<br>
-						<input type="radio" name="DV1" value="Pledged Amount"> Pledged Amount<br>-->
-
-	    	</div>
-			<div class="col-2">
-					<h4>Pledged Amount</h4>
-						Min:
-						<input type="text" name="pledged_min" />
-						<br>
-						Max:
-						<input type="text" name="pledged_max" />
-
-
-				<!--
-	  				<select class = "select_box" id = "DV2" name = "DV2">
-	    				<option value="0">Data Value 2:</option>
-	    				<option value="1">Backer Count</option>
-	    				<option value="2">Goal ($USD)</option>
-	    				<option value="3">Pledged Amount ($USD)</option>
-					  </select>
-				-->
-		  </div>
-
-		  <div class="col-2">
-				<h4>Goal Amount</h4>
-					Min:
-					<input type="text" name="goal_min" />
-					<br>
-					Max:
-					<input type="text" name="goal_max" />
-		  </div>
-
-
-	      <div class="col-2">
-				<h4>Filter By Spotlight Status?</h4>
-				<fieldset id="Spotlighted">
-					<input type="radio" name="SL" value="True"> Has Been Spotlighted<br>
-					<input type="radio" name="SL" value="False"> Has Not Been Spotlighted<br>
-					<input type="radio" name="SL" value="IDC" checked> Do Not Filter<br>
+				<label>X Axis
+				<fieldset id="dataValues1">
+					<input type="radio" name="DV1" value="Backer Count" checked> Backer Count<br>
+					<input type="radio" name="DV1" value="Goal"> Goal ($USD)<br>
+					<input type="radio" name="DV1" value="Pledged Amount"> Pledged Amount<br>
 				</fieldset>
-			</h4>
-
-			<h4>Filter By Staff-Pick Status?</h4>
-					<fieldset id="Staff-Picked">
-						<input type="radio" name="SP" value="True"> Has Been Staff-Picked<br>
-						<input type="radio" name="SP" value="False"> Has Not Been Staff-Picked<br>
-						<input type="radio" name="SP" value="IDC" checked> Do Not Filter<br>
-					</fieldset>
-				</h4>
-				<input type="submit" value="Submit">
-
-		  </div>
+			</label>
 
 
-		</form>
+    	</div>
+      	<div class="col-3">
+				<label>Y Axis
+				<fieldset id="dataValues2">
+						<input type="radio" name="DV2" value="Backer Count"> Backer Count<br>
+						<input type="radio" name="DV2" value="Goal"> Goal ($USD)<br>
+						<input type="radio" name="DV2" value="Pledged Amount" checked> Pledged Amount<br>
+				</fieldset>
+			</label>
+
+			<!--
+  				<select class = "select_box" id = "DV2" name = "DV2">
+    				<option value="0">Data Value 2:</option>
+    				<option value="1">Backer Count</option>
+    				<option value="2">Goal ($USD)</option>
+    				<option value="3">Pledged Amount ($USD)</option>
+				  </select>
+			-->
+	  </div>
+
+
+      <div class="col-3">
+			<label>Filter By Spotlight Status?
+			<fieldset id="Spotlighted">
+				<input type="radio" name="SL" value="True"> Has Been Spotlighted<br>
+				<input type="radio" name="SL" value="False"> Has Not Been Spotlighted<br>
+				<input type="radio" name="SL" value="IDC" checked> Do Not Filter<br>
+			</fieldset>
+		</label>
+
+		<label>Filter By Staff-Pick Status?
+				<fieldset id="Staff-Picked">
+					<input type="radio" name="SP" value="True"> Has Been Staff-Picked<br>
+					<input type="radio" name="SP" value="False"> Has Not Been Staff-Picked<br>
+					<input type="radio" name="SP" value="IDC" checked> Do Not Filter<br>
+				</fieldset>
+			</label>
+	  </div>
+	  <input type="submit" value="Submit">
+
+
+	</form>
 
 
       <div class="row">
