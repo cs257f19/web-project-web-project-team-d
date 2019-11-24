@@ -73,7 +73,7 @@ def defaultComparison():
 
 
 @app.route('/comparison/table' , methods=['POST' , 'GET']) #COMPARISON, do stuff.
-def defaultComparison():
+def tableComparison():
 
     if request.method == 'POST':
 
