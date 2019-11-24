@@ -239,7 +239,7 @@ class DataSource:
 			print ("Something went wrong when executing the query: ", e)
 			return None
 	
-	def getBackersAndGoal(self):
+	def getBackersAndGoal(self, spot, staff):
 		'''
 		Returns a list with only the number of backers and pledged amount, along with currency type
 
@@ -251,9 +251,42 @@ class DataSource:
 		'''
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	backers_count, goal, currency FROM kickstarter ORDER BY pledged DESC"
-			cursor.execute(query)
-			return cursor.fetchall()
+			if(spot == "t" and staff == "t"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='T') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "t" and staff =="f"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='F') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "f" and staff =="f"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='F') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "f" and staff =="t"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='T') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "t"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='T') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(spot == "f"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (spotlight='F') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(staff == "t"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (staff_pick='T') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			elif(staff == "f"):
+				query = "SELECT	backers_count, goal, currency FROM kickstarter WHERE (staff_pick='F') ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
+			else:
+				query = "SELECT	backers_count, goal, currency FROM kickstarter ORDER BY goal DESC"
+				cursor.execute(query)
+				return cursor.fetchall()
 
 		except Exception as e:
 			print ("Something went wrong when executing the query: ", e)

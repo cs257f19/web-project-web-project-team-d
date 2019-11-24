@@ -92,26 +92,6 @@
 				<input type="radio" name="SL" value="False"> Has Not Been Spotlighted<br>
 				<input type="radio" name="SL" value="IDC"> Do Not Filter<br>
 			</fieldset>
-			<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>			
-			<script type="text/javascript">
-				$(function() {
-					$("input[type=\"radio\"]").click(function(){
-					if($(this).attr("value")=="True"){
-						$(".f1").show();
-					}
-					if($(this).attr("value")=="False"){
-						$(".f2").show();
-					}
-					if($(this).attr("value")=="IDC"){
-						$(".f3").show();
-					}
-						//Cookies:
-						document.cookie="option="+value;
-					});
-					//Cookies:
-					/*Load the page with the correct input checked based off cookies*/
-				});
-			</script>
 		</label>
 
 		<label>Filter By Staff-Pick Status?
