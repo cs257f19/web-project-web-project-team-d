@@ -45,16 +45,24 @@ def defaultComparison():
 
         ds = datasource.DataSource()
         ds.connect('beckerr2', 'barn787sign')
-        if (field1 == "Backer Count" and field2 == "Pledged Amount"):
-            if(spotlight == "True"):
+        if(spotlight == "True"):
                 spot = "t"
             elif(spotlight == "False"):
                 spot = "f"
             else:
-                spot = "0"
+                spot = ""
+            
+            if(staffpick == "True"):
+                staff = "t"
+            elif(staffpick == "False"):
+                staff = "f"
+            else:
+                staff = ""
+
+        if (field1 == "Backer Count" and field2 == "Pledged Amount"):
             
             table = []
-            table = ds.getBackersAndPledged(spot)
+            table = ds.getBackersAndPledged(spot, staff)
 
             newTable = []
             i=0
@@ -70,7 +78,7 @@ def defaultComparison():
             return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
         elif (field1 == "Backer Count" and field2 == "Goal" and spotlight == "IDC" and staffpick == "IDC"):
             table = []
-            table = ds.getBackersAndGoal()
+            table = ds.getBackersAndGoal(spot, staff)
 
             newTable = []
             i=0
