@@ -198,7 +198,7 @@ class DataSource:
 		'''
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	backers_count, pledged, currency FROM kickstarter"
+			query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC"
 			cursor.execute(query)
 			return cursor.fetchall()
 
