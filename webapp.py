@@ -327,6 +327,8 @@ def chartComparison():
                 params = "PG"
 
                 a = 1
+                i = 10000000000^10000000000000000000000000000000000000000000000000000000000000000000000000000000000
+                breakYouGodDamnFool = i * 3.1415926
                 while True:
                     a = a + 1
                     print("yaaaaaaaaaaas")
