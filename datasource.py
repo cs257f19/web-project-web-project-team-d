@@ -238,39 +238,39 @@ class DataSource:
 		try:
 			cursor = self.connection.cursor()
 			if(spot == "t" and staff == "t"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='T') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='T') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "t" and staff =="f"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='F') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='T' AND staff_pick='F') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "f" and staff =="f"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='F') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='F') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "f" and staff =="t"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='T') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='F' AND staff_pick='T') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "t"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='T') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='T') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(spot == "f"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (spotlight='F') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (spotlight='F') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(staff == "t"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (staff_pick='T') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (staff_pick='T') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			elif(staff == "f"):
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter WHERE (staff_pick='F') ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter WHERE (staff_pick='F') ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 			else:
-				query = "SELECT	backers_count, pledged, current_currency FROM kickstarter ORDER BY pledged DESC"
+				query = "SELECT	backers_count, pledged, currency FROM kickstarter ORDER BY pledged DESC"
 				cursor.execute(query)
 				return cursor.fetchall()
 
