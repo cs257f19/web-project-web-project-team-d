@@ -46,18 +46,18 @@ def defaultComparison():
         ds = datasource.DataSource()
         ds.connect('beckerr2', 'barn787sign')
         if(spotlight == "True"):
-                spot = "t"
-            elif(spotlight == "False"):
-                spot = "f"
-            else:
-                spot = ""
+            spot = "t"
+        elif(spotlight == "False"):
+            spot = "f"
+        else:
+            spot = ""
             
-            if(staffpick == "True"):
-                staff = "t"
-            elif(staffpick == "False"):
-                staff = "f"
-            else:
-                staff = ""
+        if(staffpick == "True"):
+            staff = "t"
+        elif(staffpick == "False"):
+            staff = "f"
+        else:
+            staff = ""
 
         if (field1 == "Backer Count" and field2 == "Pledged Amount"):
             
