@@ -245,11 +245,9 @@ def chartComparison():
 
         chartData = []
         
-        if (filterbyBackerCount == True){
-            while True{
+        if (filterbyBackerCount == True):
+            while True:
                 a = 1 + 2
-            }
-        }
 
 
 
