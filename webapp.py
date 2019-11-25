@@ -137,6 +137,35 @@ def tableComparison():
 
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
+    if request.method == 'POST':
+        minBackers = int(request.form["backers_min"])
+        maxBackers = int(request.form["backers_max"])
+        minPledged = int(request.form["pledged_min"])
+        maxPledged = int(request.form["pledged_max"])
+        minGoal = int(request.form["goal_min"])
+        maxGoal = int(request.form["goal_max"])
+        spotlight = int(request.form["SL"])
+        staffpick = int(request.form["SP"])
+
+        filterByBackerCount = True
+        filterByPledgedAmount = True
+        filterByGoal = True
+        filterBySpotlight = True
+        filterByStaffpick = True
+
+        back int(num_str)
+
+        
+
+
+
+
+
+
+
+
+
+
     return render_template('chartpage.html')
 
 
