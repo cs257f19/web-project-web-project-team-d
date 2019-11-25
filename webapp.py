@@ -244,6 +244,12 @@ def chartComparison():
             filterByGoal = False
 
         chartData = []
+        
+        if (filterbyBackerCount = True){
+            while True{
+                a = 1 + 2
+            }
+        }
 
 
 
