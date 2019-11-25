@@ -137,34 +137,105 @@ def tableComparison():
 
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
+
+###TO_DO###
+'''
     if request.method == 'POST':
+
+        #Casting Data from User
+
+        ds = datasource.DataSource()
+        ds.connect('beckerr2', 'barn787sign')
+
         minBackers = int(request.form["backers_min"])
         maxBackers = int(request.form["backers_max"])
         minPledged = int(request.form["pledged_min"])
         maxPledged = int(request.form["pledged_max"])
         minGoal = int(request.form["goal_min"])
         maxGoal = int(request.form["goal_max"])
-        spotlight = int(request.form["SL"])
-        staffpick = int(request.form["SP"])
+        displayVariable = request.form["DV"]
 
         filterByBackerCount = True
         filterByPledgedAmount = True
         filterByGoal = True
-        filterBySpotlight = True
-        filterByStaffpick = True
 
-        back int(num_str)
 
         
+        
+
+        if (minBackers == 0 and maxBackers == 0):
+            filterbyBackerCount = False
+        
+        if (minPledged == 0 and maxPledged == 0):
+            filterByPledgedAmount = False
+        
+        if (minGoal == 0 and maxGoal == 0):
+            filterByGoal = False
+        
+        chartData = []
 
 
 
+        #Database Calls, sorted by displayVariable
+
+        #Spotlight: Print two groups, has and has not been spotlighted
+        #Displayed data is a list.  Index 0 is a name, 1 is it's data count, 2 is a name, 3 is it's data count, etc.
 
 
+        if (displayVariable == "Spotlight"):
+            isSpotlightedCount = 0
+            isNotSpotlightedCount = 0 ###WORKINGHERE###
+
+            if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
+                chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
+                
+                
+                
+                
+                return render_template('TO_DO.html', displayedData = displayedData, categoryValues = categoryValues, newTable = newtable_json)
+            
+            elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                #
+
+            elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                #
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                #
+        
+            elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                #
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByPledged(minPledged, maxPledged)
+
+                #
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByGoal(minGoal, maxGoal)
+
+                #
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByNone()
+                #
+
+            else:
+                print ("We fucked up")
+            
 
 
+        if (displayVariable == "Staffpick"):
+            # all staffpick sorts:
 
 
+        if (displayVariable == "Status"):
+            #all status sorts
+'''
 
     return render_template('chartpage.html')
 
