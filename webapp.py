@@ -208,6 +208,9 @@ def tableComparison():
 
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
+    filterByBackerCount = True
+    filterByPledgedAmount = True
+    filterByGoal = True
 
     ###TO_DO###
 
@@ -226,9 +229,7 @@ def chartComparison():
         maxGoal = int(request.form["goal_max"])
         displayVariable = request.form["DV"]
 
-        filterByBackerCount = True
-        filterByPledgedAmount = True
-        filterByGoal = True
+       
 
         if (minBackers == 0 and maxBackers == 0):
             filterbyBackerCount = False
