@@ -75,7 +75,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
         elif (field1 == "Pledged Amount" and field2 == "Backer Count"):
             table = []
@@ -92,7 +92,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
         elif (field1 == "Backer Count" and field2 == "Goal"):
             table = []
@@ -109,7 +109,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
         elif (field1 == "Goal" and field2 == "BackerCount"):
             table = []
@@ -126,7 +126,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
         elif (field1 == "Pledged Amount" and field2 == "Goal"):
             table = []
             table = ds.getPledgedAndGoal(spot, staff)
@@ -143,7 +143,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
         elif (field1 == "Pledged Amount" and field2 == "Goal"):
             table = []
@@ -161,7 +161,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
     return render_template('datapage.html')
 
