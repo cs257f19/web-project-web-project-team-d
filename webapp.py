@@ -245,12 +245,6 @@ def chartComparison():
 
         chartData = []
         
-        if (filterbyBackerCount == True):
-            while True:
-                a = 1 + 2
-
-
-
         #Database Calls, sorted by displayVariable
 
         #Spotlight: Print two groups, has and has not been spotlighted
@@ -331,6 +325,10 @@ def chartComparison():
             elif ((not filterByBackerCount) and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
                 params = "PG"
+
+                a = 1
+                while True:
+                    a = a + 1
 
                 for row in chartData:
                     if (row[10] == "T"):
