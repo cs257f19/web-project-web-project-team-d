@@ -84,7 +84,7 @@ def defaultComparison():
             i=0
             for row in table:
                 currency = row[2]
-                pledged = ds.convertCurrency(row[1], goal)
+                pledged = ds.convertCurrency(row[1], currency)
                 rowX = [row[0], pledged]
                 newTable.append(rowX)
                 i = i+1
