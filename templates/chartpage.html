@@ -42,7 +42,7 @@
  		</div>
 
     <div class="col-9">
-		<p>This page will generate a pie chart filtered by your parameters.  Please select one filter variable (the basis on which the data will be sorted and displayed), and enter any numerical parameters you wish to the input boxes.  If you do not want to filter by a given paramter, such as Backer Count for example, leave both fields set to 0.  If after clicking submit there is no chart, your query had no hits in our database.</p>
+		<p>This page will generate a pie chart filtered by your parameters.  Please select one display variable (the basis on which the data will be sorted and displayed), and enter any numerical parameters you wish to the input boxes.  If you do not want to filter by a given paramter, such as Backer Count for example, leave both fields set to 0.  If after clicking submit there is no chart, your query had no hits in our database.</p>
 
   	</div>
 
@@ -197,7 +197,39 @@
 			var chart = anychart.pie();
 
 			// set the chart title
-			chart.title("Population by Race for the United States: 2010 Census");
+			if ("{{params}}" == "All"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{min_backers}} - {{max_backers}}, Pledged from {{min_pledged}} - {{max_pledged}}, Goal from {{min_goal}} - {{max_goal}}");
+			}
+			else if ("{{params}}" == "B"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{min_backers}} - {{max_backers}}");
+			}
+
+			else if ("{{params}}" == "P"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Pledged from {{min_pledged}} - {{max_pledged}}");
+			}
+
+			else if ("{{params}}" == "G"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Goal from {{min_goal}} - {{max_goal}}");
+			}
+
+			else if ("{{params}}" == "BP"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{min_backers}} - {{max_backers}}, Pledged from {{min_pledged}} - {{max_pledged}}");
+			}
+
+			else if ("{{params}}" == "BG"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{min_backers}} - {{max_backers}}, Goal from {{min_goal}} - {{max_goal}}");
+			}
+
+			else if ("{{params}}" == "PG"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Pledged from {{min_pledged}} - {{max_pledged}}, Goal from {{min_goal}} - {{max_goal}}");
+			}
+
+			else if ("{{params}}" == "None"){
+				chart.title("Kickstarters Filtered By {{displayVariable}}");
+			}
+			else{
+				chart.title("ERROR_ERROR");
+			}
 
 			// add the data
 			chart.data(data);
