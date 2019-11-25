@@ -233,6 +233,7 @@ def chartComparison():
         if (minBackers == 0 and maxBackers == 0):
             filterbyBackerCount = False
             print("In the IF")
+            print(filterbyBackerCount)
 
         if (minPledged == 0 and maxPledged == 0):
             filterByPledgedAmount = False
@@ -242,12 +243,6 @@ def chartComparison():
 
         print(filterByBackerCount)
         chartData = []
-        
-        #Database Calls, sorted by displayVariable
-
-        #Spotlight: Print two groups, has and has not been spotlighted
-        #Displayed data is a list.  Index 0 is a name, 1 is it's data count, 2 is a name, 3 is it's data count, etc.
-
 
         if (displayVariable == "Spotlight"):
             print(filterbyBackerCount)
