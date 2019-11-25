@@ -168,22 +168,14 @@
 			var List1 = []
 			var i = 1
 			let theTable = "{{newTable}}"
-			var noFat = theTable.replace('&#34;','');
-			while (noFat.includes('#')){
-				noFat = noFat.replace('&#34;','');
-			}
+			var noFat = theTable.replace(/&#34;/g,'');
 
-			var noFat2 = noFat.replace('[','');
-			while (noFat.includes('[')){
-				noFat2 = noFat2.replace('[','');
-			}
+			var noFat2 = noFat.replace(/\[/g,'');
 
-			var noFat3 = noFat2.replace(']','');
-			while (noFat3.includes(']')){
-				noFat3 = noFat3.replace(']','');
-			}
+			var noFat3 = noFat2.replace(/\[/g,'');
+		
+			var parsed1 = noFat3.split(', ');
 			
-			var parsed1 = noFat3.split(', ','');
 			console.log(parsed1)
 			var ParsedList = []
 
