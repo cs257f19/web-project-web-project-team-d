@@ -196,7 +196,7 @@
 
 			// set the chart title
 			if ("{{params}}" == "All"){
-				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{minBackers}} - {{maxBackers}}, Pledged from {{minPledged}} - {{maxPledged}}, Goal from {{min_goal}} - {{max_goal}}");
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{minBackers}} - {{maxBackers}}, Pledged from {{minPledged}} - {{maxPledged}}, Goal from {{minGoal}} - {{maxGoal}}");
 			}
 			else if ("{{params}}" == "B"){
 				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{minBackers}} - {{maxBackers}}");
@@ -207,7 +207,7 @@
 			}
 
 			else if ("{{params}}" == "G"){
-				chart.title("Kickstarters Filtered By {{displayVariable}}, Goal from {{min_goal}} - {{max_goal}}");
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Goal from {{minGoal}} - {{maxGoal}}");
 			}
 
 			else if ("{{params}}" == "BP"){
@@ -215,11 +215,11 @@
 			}
 
 			else if ("{{params}}" == "BG"){
-				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{minBackers}} - {{maxBackers}}, Goal from {{min_goal}} - {{max_goal}}");
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Backers from {{minBackers}} - {{maxBackers}}, Goal from {{minGoal}} - {{maxGoal}}");
 			}
 
 			else if ("{{params}}" == "PG"){
-				chart.title("Kickstarters Filtered By {{displayVariable}}, Pledged from {{minPledged}} - {{maxPledged}}, Goal from {{min_goal}} - {{max_goal}}");
+				chart.title("Kickstarters Filtered By {{displayVariable}}, Pledged from {{minPledged}} - {{maxPledged}}, Goal from {{minGoal}} - {{maxGoal}}");
 			}
 
 			else if ("{{params}}" == "None"){
