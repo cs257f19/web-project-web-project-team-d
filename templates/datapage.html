@@ -117,13 +117,15 @@
 function buildGraph (graphdata) {
 	console.log("In buildGraph");
 	var chartContainer = document.getElementById("chartContainer");
+	console.log({{spotlight}}, {{staffpick}});
      var chart = new CanvasJS.Chart(chartContainer,
      {
 		animationEnabled: true,
 		zoomEnabled: true,
     title:{
 		text: "x: {{field1}} vs y: {{field2}}, spotlight:{{spotlight}}, staffpick: {{staffpick}}"
-    },
+	},
+	
 
      data: [
      {
