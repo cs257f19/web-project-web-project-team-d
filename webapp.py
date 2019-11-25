@@ -75,7 +75,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick=staff)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
 
         elif (field1 == "Pledged Amount" and field2 == "Backer Count"):
             table = []
@@ -92,7 +92,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, spotlight=spot, staffpick=staff)
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
 
         elif (field1 == "Backer Count" and field2 == "Goal"):
             table = []
@@ -102,14 +102,31 @@ def defaultComparison():
             i=0
             for row in table:
                 currency = row[2]
-                pledged = ds.convertCurrency(row[1], currency)
-                rowX = [row[0], pledged]
+                goal = ds.convertCurrency(row[1], currency)
+                rowX = [row[0], goal]
                 newTable.append(rowX)
                 i = i+1
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spot, sp=staff)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
+
+        elif (field1 == "Goal" and field2 == "BackerCount"):
+            table = []
+            table = ds.getBackersAndGoal(spot, staff)
+
+            newTable = []
+            i=0
+            for row in table:
+                currency = row[2]
+                goal = ds.convertCurrency(row[1], currency)
+                rowX = [goal, row[0]]
+                newTable.append(rowX)
+                i = i+1
+
+            newtable_json = json.dumps(newTable)
+
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
         elif (field1 == "Pledged Amount" and field2 == "Goal"):
             table = []
             table = ds.getPledgedAndGoal(spot, staff)
@@ -118,14 +135,33 @@ def defaultComparison():
             i=0
             for row in table:
                 currency = row[2]
-                pledged = ds.convertCurrency(row[1], currency)
-                rowX = [row[0], pledged]
+                pledged = ds.convertCurrency(row[0], currency)
+                goal = ds.convertCurrency(row[1], currency)
+                rowX = [pledged, goal]
                 newTable.append(rowX)
                 i = i+1
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick=staff)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, sl=spotlight, sp=staffpick)
+
+        elif (field1 == "Pledged Amount" and field2 == "Goal"):
+            table = []
+            table = ds.getPledgedAndGoal(spot, staff)
+
+            newTable = []
+            i=0
+            for row in table:
+                currency = row[2]
+                pledged = ds.convertCurrency(row[0], currency)
+                goal = ds.convertCurrency(row[1], currency)
+                rowX = [goal, pledged]
+                newTable.append(rowX)
+                i = i+1
+
+            newtable_json = json.dumps(newTable)
+
+            return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
     return render_template('datapage.html')
 
 
