@@ -226,9 +226,9 @@ def chartComparison():
         maxGoal = int(request.form["goal_max"])
         displayVariable = request.form["DV"]
 
-       
 
-      
+
+
         chartData = []
 
         if (displayVariable == "Spotlight"):
@@ -916,39 +916,7 @@ def chartComparison():
     return render_template('chartpage.html')
 
 
-    ''' if request.method == 'POST':
-
-        field1 = request.form["DV1"]
-        field2 = request.form["DV2"]
-        spotlight = request.form["SL"]
-        staffpick = request.form["SP"]
-
-        ds = datasource.DataSource()
-        ds.connect('beckerr2', 'barn787sign')
-
-        if (field1 == "Backer Count" and field2 == "Pledged Amount" and spotlight == "IDC" and staffpick == "IDC"):
-
-            table = []
-            table = ds.getBackersAndPledged()
-
-            newTable = []
-            i=0
-            for row in table:
-                rowX = [row[0], row[1]]
-                newTable.append(rowX)
-                i = i+1
-
-            bestTable = []
-            for row in table:
-                for index in row:
-                    bestTable.append(index)
-
-
-
-            newtable_json = json.dumps(newTable)
-
-            return render_template('datapage_table.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
-    return render_template('datapage_table.html')'''
+    
 
 
 

@@ -64,12 +64,6 @@
 
 
 
-				<!--
-
-					<input type="radio" name="DV1" value="Backer Count" checked> Backer Count<br>
-					<input type="radio" name="DV1" value="Goal"> Goal ($USD)<br>
-					<input type="radio" name="DV1" value="Pledged Amount"> Pledged Amount<br>-->
-
     	</div>
 		<div class="col-2">
 				<h4>Pledged Amount</h4>
@@ -80,14 +74,6 @@
 					<input type="text" name="pledged_max" value = 0 />
 
 
-			<!--
-  				<select class = "select_box" id = "DV2" name = "DV2">
-    				<option value="0">Data Value 2:</option>
-    				<option value="1">Backer Count</option>
-    				<option value="2">Goal ($USD)</option>
-    				<option value="3">Pledged Amount ($USD)</option>
-				  </select>
-			-->
 	  </div>
 
 	  <div class="col-2">
@@ -113,45 +99,7 @@
 	  </div>
 	</form>
 
-<!-- 	<script type="text/javascript">
 
-		function buildGraph (graphdata) {
-			console.log("In buildGraph");
-			var chartContainer = document.getElementById("chartContainer");
-			 var chart = new CanvasJS.Chart(chartContainer,
-			 {
-				animationEnabled: true,
-				zoomEnabled: true,
-			  title:{
-			   text: "x: {{field1}} vs y: {{field2}}"
-			 },
-
-			 data: [
-			 {
-			  type: "scatter",
-			  dataPoints: graphdata
-			}
-			]
-			 });
-			console.log("Rendering...");
-			chart.render();
-			console.log("Rendered!");
-		  }
-
-			 var List1 =  []
-			 var i = 1
-			 let newtable_json = "{{newTable}}";
-			 let newtable = JSON.parse(newtable_json);
-			 console.log("Got newtable of length "+newtable.length);
-			 console.log(newtable);
-			 console.log("Building internal graph structure...");
-			 for (let rows of newtable) {
-					 List1.push({x: Number(rows[0]), y: Number(rows[1])})
-			 }
-			 console.log("Built");
-			 console.log(List1)
-			 buildGraph(List1);
-		 </script>-->
 
 
 
@@ -247,80 +195,6 @@
 		</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	<!--
-<script type="text/javascript">
-
-function buildChart (graphdata) {
-	console.log("In buildChart");
-	var chartContainer = document.getElementById("chartContainer");
-     var chart = new CanvasJS.Chart(chartContainer,
-     {
-		animationEnabled: true,
-		zoomEnabled: true,
-      title:{
-       text: "x: {{field1}} vs y: {{field2}}" //TO BE DONE
-     },
-
-     data: [
-     {
-      type: "scatter",
-      dataPoints: graphdata
-    }
-    ]
-	 });
-    console.log("Rendering...");
-    chart.render();
-    console.log("Rendered!");
-  }
-
-	 var List1 =  []
-	 var i = 1
-	 let newtable_json = "{{newTable}}";
-	 let newtable = JSON.parse(newtable_json);
-	 console.log("Got newtable of length "+newtable.length);
-	 console.log(newtable);
-	 console.log("Building internal graph structure...");
-	 console.log("Example of rows[0]...");
-         console.log(newtable[0][0]);
-	 for (let rows of newtable) {
-	 		List1.push({x: Number(rows[0]), y: Number(rows[1])});
-	 }
-	 console.log("Built");
-	 console.log(List1);
-	 buildGraph(List1);
-
-
-
- </script>-->
-	<!--
-		  <table>
-				<tr style="text-align: center;">
-					<th>{{field1}}</th>
-					<th>{{field2}}</th>
-				</tr>
-
-
-					{% for row in table %}
-					<tr>
-						<td>{{row[0]}}</td>
-						<td>{{row[1]}}</td>
-					</tr>
-					{% endfor %}
-
-		</table>
-	-->
       	</div>
     	</div>
 
