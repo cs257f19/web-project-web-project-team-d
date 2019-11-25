@@ -41,28 +41,7 @@ class DataSource:
 	def disconnect(self):
 			self.connection.close()
 
-	def getKickstartersBlurbContains(self, blurb):
-		'''
-        Returns a list of all of the kickstarter projects that have the given string in their 'blurb'
 
-        PARAMETERS:
-            blurb - the string to check within each blurb
-
-        RETURN:
-			a list of all of the kickstarter projects that have the given string in their 'blurb'        '''
-		return []
-
-	def getKickstartersNameContains(self, name):
-		'''
-        Returns a list of all of the kickstarter projects that have the given string in their name
-
-        PARAMETERS:
-            name - the string to check within each name
-
-        RETURN:
-			a list of all of the kickstarter projects that have the given string in their name
-		'''
-		return []
 
 	def getKickstartersUsingCurrency(self, currency):
 		'''
@@ -145,45 +124,105 @@ class DataSource:
 		except Exception as e:
 			print ("Something went wrong when executing the query: ", e)
 			return None
+			
+	def getFilterByAll(self,minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal):
 
-	def getKickerstartersInGoalRange(self, goal_max, goal_min = 0):
-		'''
-        Returns a list of all of the kickstarter projects whose goal is in the specified range.
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
 
-        PARAMETERS:
-            goal_max - the maximum amount for the goal
-			goal_min - the minimum amount for the goal
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
-        RETURN:
-            a list of all of the kickstarter projects whose goal is in the specified range.
-        '''
-		return []
 
-	def getKickerstartersInBackersRange(self, backers_max, backers_min = 0):
-		'''
-        Returns a list of all of the kickstarter projects that have the specified range of backers.
+	def getFilterByBackersPledged(self,minBackers, maxBackers, minPledged, maxPledged):
 
-        PARAMETERS:
-            backers_max - the maximum number of backers
-			backers_min - the minimum number of backers
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
 
-        RETURN:
-            a list of all of the kickstarter projects that have the specified range of backers.
-        '''
-		return []
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
 
-	def getKickerstartersInPledgeRange(self, pledge_max, pledge_min = 0):
-		'''
-        Returns a list of all of the kickstarter projects that have the specified range of pledge money.
+	def getFilterByBackersGoal(self,minBackers, maxBackers, minGoal, maxGoal):
 
-        PARAMETERS:
-            pledge_max - the maximum pledge amount
-			pledge_min - the minimum pledge amount
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
 
-        RETURN:
-            a list of all of the kickstarter projects that have the specified range of pledged money.
-        '''
-		return []
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def getFilterByPledgedGoal(self,minPledged, maxPledged, minGoal, maxGoal):
+
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def getFilterByBackers(self,minBackers, maxBackers):
+
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def getFilterByPledged(self,minPledged, maxPledged):
+
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def getFilterByGoal(self,minGoal, maxGoal):
+
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+
+	def getFilterByNone(self):
+
+		try:
+			cursor = self.connection.cursor()
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			cursor.execute(query)
+			return cursor.fetchall()
+
+		except Exception as e:
+			print ("Something went wrong when executing the query: ", e)
+			return None
+	
+	
 
 	def getBackersAndPledged(self, spot, staff):
 		'''
