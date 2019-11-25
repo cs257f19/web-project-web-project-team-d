@@ -240,6 +240,7 @@ def chartComparison():
         if (minGoal == 0 and maxGoal == 0):
             filterByGoal = False
 
+        print(filterByBackerCount)
         chartData = []
         
         #Database Calls, sorted by displayVariable
@@ -249,6 +250,7 @@ def chartComparison():
 
 
         if (displayVariable == "Spotlight"):
+            print(filterbyBackerCount)
             isSpotlightedCount = 0
             isNotSpotlightedCount = 0 ###WORKINGHERE###
 
