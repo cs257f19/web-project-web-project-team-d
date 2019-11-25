@@ -430,7 +430,6 @@ class DataSource:
 		sek = 0.10
 		sgd = 0.73
 		usd = 1
-		print("current currency: " + cur_currency)
 		if cur_currency == 'USD':
 			return amount
 		elif cur_currency == 'EUR':
