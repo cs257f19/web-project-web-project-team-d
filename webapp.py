@@ -329,6 +329,7 @@ def chartComparison():
                 a = 1
                 while True:
                     a = a + 1
+                    print("yaaaaaaaaaaas")
 
                 for row in chartData:
                     if (row[10] == "T"):
