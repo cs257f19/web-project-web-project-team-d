@@ -76,7 +76,7 @@ def defaultComparison():
             newtable_json = json.dumps(newTable)
 
             return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
-        elif (field1 == "Backer Count" and field2 == "Goal" and spotlight == "IDC" and staffpick == "IDC"):
+        elif (field1 == "Backer Count" and field2 == "Goal"):
             table = []
             table = ds.getBackersAndGoal(spot, staff)
 
@@ -85,6 +85,22 @@ def defaultComparison():
             for row in table:
                 goal = row[2]
                 goal = ds.convertCurrency(row[1], goal)
+                rowX = [row[0], goal]
+                newTable.append(rowX)
+                i = i+1
+
+            newtable_json = json.dumps(newTable)
+
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json)
+        elif (field1 == "Pledged Amount" and field2 == "Goal"):
+            table = []
+            table = ds.getPledgedAndGoal(spot, staff)
+
+            newTable = []
+            i=0
+            for row in table:
+                currency = row[2]
+                pledged = ds.convertCurrency(row[1], currency)
                 rowX = [row[0], goal]
                 newTable.append(rowX)
                 i = i+1
