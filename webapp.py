@@ -226,15 +226,13 @@ def chartComparison():
         maxGoal = int(request.form["goal_max"])
         displayVariable = request.form["DV"]
 
-        filterByBackerCount = False
+        filterByBackerCount = True
         filterByPledgedAmount = True
         filterByGoal = True
 
-        print(minBackers)
-        print(maxBackers)
-
         if (minBackers == 0 and maxBackers == 0):
             filterbyBackerCount = False
+            print("In the IF")
 
         if (minPledged == 0 and maxPledged == 0):
             filterByPledgedAmount = False
