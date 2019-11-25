@@ -276,13 +276,13 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
+                params = "All"
 
-
-
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                params = "BP"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -300,10 +300,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                params = "BG"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -321,10 +322,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                params = "PG"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -342,10 +344,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                params = "B"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -363,10 +366,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByPledged(minPledged, maxPledged)
+                params = "P"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -384,10 +388,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByGoal(minGoal, maxGoal)
+                params = "G"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -405,10 +410,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByNone()
+                params = "None"
 
                 for row in chartData:
                     if (row[10] == "T"):
@@ -426,7 +432,7 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             else:
                 print ("We fucked up")
@@ -438,6 +444,7 @@ def chartComparison():
 
             if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
+                params = "All"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -455,10 +462,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                params = "BP"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -476,10 +484,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                params = "BG"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -497,10 +506,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                params = "PG"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -518,10 +528,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                params = "B"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -539,10 +550,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByPledged(minPledged, maxPledged)
+                params = "P"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -560,10 +572,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByGoal(minGoal, maxGoal)
+                params = "G"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -581,10 +594,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByNone()
+                params = "None"
 
                 for row in chartData:
                     if (row[11] == "T"):
@@ -602,7 +616,7 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             else:
                 print ("We fucked up")
@@ -617,6 +631,7 @@ def chartComparison():
 
             if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
+                params = "All"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -649,11 +664,12 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
 
             elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                params = "BP"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -686,10 +702,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                params = "BG"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -722,10 +739,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                params = "PG"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -758,10 +776,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                params = "B"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -794,10 +813,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByPledged(minPledged, maxPledged)
+                params = "P"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -830,10 +850,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByGoal(minGoal, maxGoal)
+                params = "G"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -866,10 +887,11 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal):
                 chartData = ds.getFilterByNone()
+                params = "None"
 
                 for row in chartData:
                     if (row[12] == "S"):
@@ -902,7 +924,7 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', displayVariable = displayVariable newTable = newtable_json, params=params, minBackers = minBackers, maxBackers = maxBackers, minPledged = minPledged, maxPledged = maxPledged, minGoal - minGoal, maxGoal = maxGoal)
 
             else:
                 print ("We fucked up")
