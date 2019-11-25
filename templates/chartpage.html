@@ -163,11 +163,6 @@
 		  anychart.onDocumentReady(function() {
 
 			// set the data
-			print("HERE!")
-			x = 1
-			while (True){
-				x = x + 1
-			}
 			var List1 = []
 			var i = 1
 			let newtable_json = "{{newTable}}";
@@ -175,6 +170,7 @@
 			for (let rows of newtable){
 				List1.push({x: String(rows[0]), value: Number(rows[1])})
 			}
+			console.log(List1)
 
 			var data = List1
 
