@@ -69,13 +69,14 @@ def defaultComparison():
             for row in table:
                 currency = row[2]
                 pledged = ds.convertCurrency(row[1], currency)
+                print("currency: " + currency + " pledged: " + pledged)
                 rowX = [row[0], pledged]
                 newTable.append(rowX)
                 i = i+1
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick=staff)
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick="aaaaa")
         elif (field1 == "Backer Count" and field2 == "Goal"):
             table = []
             table = ds.getBackersAndGoal(spot, staff)
