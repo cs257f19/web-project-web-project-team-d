@@ -145,7 +145,7 @@ def defaultComparison():
 
             return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
 
-        elif (field1 == "Pledged Amount" and field2 == "Goal"):
+        elif (field1 == "Goal" and field2 == "Pledged Amount"):
             table = []
             table = ds.getPledgedAndGoal(spot, staff)
 
