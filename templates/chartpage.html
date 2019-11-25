@@ -111,6 +111,52 @@
 	  </div>
 	</form>
 
+<!--  
+	<script type="text/javascript">
+
+		function buildGraph (graphdata) {
+			console.log("In buildGraph");
+			var chartContainer = document.getElementById("chartContainer");
+			 var chart = new CanvasJS.Chart(chartContainer,
+			 {
+				animationEnabled: true,
+				zoomEnabled: true,
+			  title:{
+			   text: "x: {{field1}} vs y: {{field2}}"
+			 },
+		
+			 data: [
+			 {
+			  type: "scatter",
+			  dataPoints: graphdata
+			}
+			]
+			 });
+			console.log("Rendering...");
+			chart.render();
+			console.log("Rendered!");
+		  }
+		
+			 var List1 =  []
+			 var i = 1
+			 let newtable_json = "{{newTable}}";
+			 let newtable = JSON.parse(newtable_json);
+			 console.log("Got newtable of length "+newtable.length);
+			 console.log(newtable);
+			 console.log("Building internal graph structure...");
+			 for (let rows of newtable) {
+					 List1.push({x: Number(rows[0]), y: Number(rows[1])})
+			 }
+			 console.log("Built");
+			 console.log(List1)
+			 buildGraph(List1);
+		
+		
+		
+		
+		 </script>
+-->
+
 
       <div class="row">
       	<div class="col-12">
