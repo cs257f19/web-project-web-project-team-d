@@ -226,7 +226,7 @@ def chartComparison():
                         
                 
                 
-                return render_template('chartpage.html', newTable = newtable_json)
+                return render_template('chartpage.html', newTable = newTable)
             
             elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
                 chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
