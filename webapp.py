@@ -204,9 +204,7 @@ def chartComparison():
 
             if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
-                x = 1
-                while True:
-                    x = x + 1
+                
                 for row in chartData:
                     if (row[10] == "T"):
                         isSpotlightedCount = isSpotlightedCount + 1
