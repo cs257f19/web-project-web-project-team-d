@@ -221,6 +221,8 @@ def chartComparison():
 
                 newtable_json = json.dumps(newTable)
 
+                print(newtable_json)
+
                         
                 
                 
