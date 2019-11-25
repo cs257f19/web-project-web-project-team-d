@@ -161,11 +161,8 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-<<<<<<< HEAD
             return render_template('datapage.html', table=table, field1=field2, field2=field1, newTable = newtable_json, sl=spotlight, sp=staffpick)
-=======
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spotlight, staffpick=staffpick)
->>>>>>> 3c64e9b1d5200c3f60a39aee76c03582af7a95b5
+
     return render_template('datapage.html')
 
 
