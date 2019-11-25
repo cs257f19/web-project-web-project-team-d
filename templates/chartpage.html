@@ -172,21 +172,21 @@
 
 			var noFat2 = noFat.replace(/\[/g,'');
 
-			var noFat3 = noFat2.replace(/\[/g,'');
+			var noFat3 = noFat2.replace(/\]/g,'');
 		
 			var parsed1 = noFat3.split(', ');
-			
-			console.log(parsed1)
-			var ParsedList = []
 
-			for (let toParse of theTable){
-				toParse[0] = toParse[0].slice(5, -5)
+			console.log(parsed1)
+			var ParsedFixedList = []
+
+			for (i = 0; i < parsed1.length; i = i + 2){
+				ParsedFixedList.push([parsed1[i], parsed1[i+1]]);
 			}
-			console.log(theTable);
+			console.log(ParsedFixedList)
 
 			//let newtable = JSON.parse(newtable_json);
 			//console.log(newtable);
-			for (let rows of theTable){
+			for (let rows of ParsedFixedList){
 				List1.push({x: String(rows[0]), value: Number(rows[1])})
 			}
 			console.log(List1);
