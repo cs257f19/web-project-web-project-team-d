@@ -168,9 +168,15 @@
 			var List1 = []
 			var i = 1
 			let newtable_json = "{{newTable}}";
+			var ParsedList = []
 
-			let newtable = JSON.parse(newtable_json);
+			for (let toParse of newtable){
+				toParse[0] = toParse[0].slice(5, -5)
+			}
 			console.log(newtable);
+
+			//let newtable = JSON.parse(newtable_json);
+			//console.log(newtable);
 			for (let rows of newtable){
 				List1.push({x: String(rows[0]), value: Number(rows[1])})
 			}
