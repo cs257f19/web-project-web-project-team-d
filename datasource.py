@@ -142,7 +142,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+"))"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -154,7 +154,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -166,7 +166,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged) +") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE ((pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged) +") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -178,7 +178,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+ ") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE (backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ")"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -190,7 +190,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+ ")"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -202,7 +202,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter WHERE (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +")"
 			cursor.execute(query)
 			return cursor.fetchall()
 
@@ -214,7 +214,7 @@ class DataSource:
 
 		try:
 			cursor = self.connection.cursor()
-			query = "SELECT	* FROM kickstarter WHERE ((backers_count BETWEEN " + str(minBackers) + " AND " + str(maxBackers) + ") AND (pledged BETWEEN " +str(minPledged) + " AND " +str(maxPledged)+") AND (goal BETWEEN " +str(minGoal) +" AND " +str(maxGoal) +"))"
+			query = "SELECT	* FROM kickstarter"
 			cursor.execute(query)
 			return cursor.fetchall()
 
