@@ -154,8 +154,8 @@ def tableComparison():
 @app.route('/comparison/chart' , methods=['POST' , 'GET']) #CHART, do stuff.
 def chartComparison():
 
-###TO_DO###
-'''
+    ###TO_DO###
+    '''
     if request.method == 'POST':
 
         #Casting Data from User
@@ -250,8 +250,7 @@ def chartComparison():
 
 
         if (displayVariable == "Status"):
-            #all status sorts
-        '''
+            #all status sorts '''
     return render_template('chartpage.html')
 
 
