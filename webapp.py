@@ -75,7 +75,7 @@ def defaultComparison():
 
             newtable_json = json.dumps(newTable)
 
-            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick="aaaaa")
+            return render_template('datapage.html', table=table, field1=field1, field2=field2, newTable = newtable_json, spotlight=spot, staffpick=staff)
         elif (field1 == "Backer Count" and field2 == "Goal"):
             table = []
             table = ds.getBackersAndGoal(spot, staff)
