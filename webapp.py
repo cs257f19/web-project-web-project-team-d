@@ -251,8 +251,7 @@ def chartComparison():
 
         if (displayVariable == "Status"):
             #all status sorts
-'''
-
+        '''
     return render_template('chartpage.html')
 
 
