@@ -230,12 +230,11 @@ def chartComparison():
         filterByPledgedAmount = True
         filterByGoal = True
 
+        print(minBackers)
+        print(maxBackers)
 
-
-
-
-       # if (minBackers == 0 and maxBackers == 0):
-       #     filterbyBackerCount = False
+        if (minBackers == 0 and maxBackers == 0):
+            filterbyBackerCount = False
 
         if (minPledged == 0 and maxPledged == 0):
             filterByPledgedAmount = False
