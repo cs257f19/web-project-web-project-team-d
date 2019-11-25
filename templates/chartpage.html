@@ -164,10 +164,11 @@
 
 			// set the data
 			console.log("{{newTable}}")
+			console.log(newtable_json)
 			var List1 = []
 			var i = 1
 			let newtable_json = "{{newTable}}";
-			//let newtable = JSON.parse(newtable_json);
+			let newtable = JSON.parse(newtable_json);
 			for (let rows of newtable_json){
 				List1.push({x: String(rows[0]), value: Number(rows[1])})
 			}
