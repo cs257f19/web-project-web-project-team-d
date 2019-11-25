@@ -155,7 +155,7 @@ def tableComparison():
 def chartComparison():
 
     ###TO_DO###
-    '''
+    
     if request.method == 'POST':
 
         #Casting Data from User
@@ -205,40 +205,173 @@ def chartComparison():
             if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
                 chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
                 
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                        
                 
                 
-                
-                return render_template('TO_DO.html', displayedData = displayedData, categoryValues = categoryValues, newTable = newtable_json)
+                return render_template('chartpage.html', newTable = newtable_json)
             
             elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
                 chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
-                #
+                
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
 
             elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
                 chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
-                #
+                
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
             
             elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal): 
                 chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
-                #
+                
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
         
             elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
                 chartData = ds.getFilterByBackers(minBackers, maxBackers)
-                #
+                
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
             
             elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
                 chartData = ds.getFilterByPledged(minPledged, maxPledged)
 
-                #
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
             
             elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
                 chartData = ds.getFilterByGoal(minGoal, maxGoal)
 
-                #
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
             
             elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
                 chartData = ds.getFilterByNone()
-                #
+                
+                for row in chartData:
+                    if (row[10] == "T"):
+                        isSpotlightedCount = isSpotlightedCount + 1
+                    elif (row[10] == "F"):
+                        isNotSpotlightedCount = isNotSpotlightedCount + 1 
+                
+                newTable = []
+
+                row1 = ["Spotlighted", isSpotlightedCount]
+                newTable.append(row1)
+
+                row2 = ["Not Spotlighted", isNotSpotlightedCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+
+                return render_template('chartpage.html', newTable = newtable_json)
 
             else:
                 print ("We fucked up")
@@ -247,10 +380,480 @@ def chartComparison():
 
         if (displayVariable == "Staffpick"):
             # all staffpick sorts:
+            isStaffpickCount = 0
+            isNotStaffpickCount = 0
+
+            if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
+                chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+
+            elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+
+            elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+        
+            elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByPledged(minPledged, maxPledged)
+
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByGoal(minGoal, maxGoal)
+
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByNone()
+                
+                for row in chartData:
+                    if (row[11] == "T"):
+                        isStaffpickCount = isStaffpickCount + 1
+                    elif (row[11] == "F"):
+                        isNotStaffpickCount = isNotStaffpickCount + 1 
+                        
+                newTable = []
+
+                row1 = ["Staff-Picked", isStaffpickCount]
+                newTable.append(row1)
+
+                row2 = ["Not Staff-Picked", isNotStaffpickCount]
+                newTable.append(row2)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+
+            else:
+                print ("We fucked up")
 
 
         if (displayVariable == "Status"):
-            #all status sorts '''
+            #all status sorts
+            statusSuccess = 0
+            statusFailed = 0
+            statusCancelled = 0
+            statusSuspended = 0
+            statusLive = 0
+
+            if (filterByBackerCount and filterByPledgedAmount and filterByGoal):
+                chartData = ds.getFilterByAll(minBackers, maxBackers, minPledged, maxPledged, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+                
+
+            elif (filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackersPledged(minBackers, maxBackers, minPledged, maxPledged)
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+
+            elif (filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByBackersGoal(minBackers, maxBackers, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByPledgedGoal(minPledged, maxPledged, minGoal, maxGoal)
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+        
+            elif (filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByBackers(minBackers, maxBackers)
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByPledged(minPledged, maxPledged)
+
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and filterByGoal): 
+                chartData = ds.getFilterByGoal(minGoal, maxGoal)
+
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+            
+            elif (not filterByBackerCount and not filterByPledgedAmount and not filterByGoal): 
+                chartData = ds.getFilterByNone()
+                
+                for row in chartData:
+                    if (row[12] == "S"):
+                        statusSuccess = statusSuccess + 1
+                    elif (row[12] == "F"):
+                        statusFailed = statusFailed + 1 
+                    elif (row[12] == "C"):
+                        statusCancelled = statusCancelled + 1 
+                    elif (row[12] == "X"):
+                        statusSuspended = statusSuspended + 1 
+                    elif (row[12] == "L"):
+                        statusLive = statusLive + 1
+
+                newTable = []
+
+                row1 = ["Succesful", statusSuccess]
+                newTable.append(row1)
+
+                row2 = ["Failed", statusFailed]
+                newTable.append(row2)
+
+                row3 = ["Cancelled", statusCancelled]
+                newTable.append(row3)
+
+                row4 = ["Suspended", statusSuspended]
+                newTable.append(row4)
+
+                row5 = ["Live", statusLive]
+                newTable.append(row5)
+
+                newtable_json = json.dumps(newTable)
+                
+                return render_template('chartpage.html', newTable = newtable_json)
+
+            else:
+                print ("We fucked up")
     return render_template('chartpage.html')
 
 
